@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function createBoard() {
         //get shuffled game array
         const bombsArray = Array(bombAmount).fill('bomb')
-        const emptyArray = Array(width * width - bombAmount).fill('valid')
+        const emptyArray = Array(width*width - bombAmount).fill('valid')
         const gameArray = emptyArray.concat(bombsArray)
-        const shuffledArray = gameArray.sort(() => Math.random() - 0.5)
+        const shuffledArray = gameArray.sort(() => Math.random() -0.5)
 
         for (let i = 0; i < width*width; i++) {
             const sq = document.createElement('div')
@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sqs[i].classList.contains('valid')) {
                 if (i > 0 && !lEdge && sqs[i -1].classList.contains('bomb')) total++
                 if (i > 9 && !rEdge && sqs[i +1 -width].classList.contains('bomb')) total++
-                if (i > 10 && sqs[i -width].classList.contains('bomb')) total++
-                if (i > 11 && !lEdge && sqs[i -1 -width].classList.contains('bomb')) total++
-                if (i < 98 && !rEdge && sqs[i +1].classList.contains('bomb')) total++
-                if (i < 90 && !rEdge && sqs[i -1 +width].classList.contains('bomb')) total++
-                if (i < 88 && !rEdge && sqs[i +1 +width].classList.contains('bomb')) total++
-                if (i < 89 && sqs[i +width].classList.contains('bomb')) total++
+                if (i >= 10 && sqs[i -width].classList.contains('bomb')) total++
+                if (i >= 11 && !lEdge && sqs[i -1 -width].classList.contains('bomb')) total++
+                if (i <= 98 && !rEdge && sqs[i +1].classList.contains('bomb')) total++
+                if (i < 90 && !lEdge && sqs[i -1 +width].classList.contains('bomb')) total++
+                if (i <= 88 && !rEdge && sqs[i +1 +width].classList.contains('bomb')) total++
+                if (i <= 89 && sqs[i +width].classList.contains('bomb')) total++
                 sqs[i].setAttribute('data', total)
 
             }
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         else {
             let total = sq.getAttribute('data')
-            if (total != 0) {
+            if (total !=0) {
                 sq.classList.add('checked')
                 if (total == 1) sq.classList.add('one')
                 if (total == 2) sq.classList.add('two')
