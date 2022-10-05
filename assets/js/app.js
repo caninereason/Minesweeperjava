@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const bombsArray = Array(bombAmount).fill('bomb')
         const emptyArray = Array(width*width - bombAmount).fill('valid')
         const gameArray = emptyArray.concat(bombsArray)
+        shuffleArray(gameArray)
         const shuffledArray = gameArray.sort(() => Math.random() -0.5)
-
+          
         for (let i = 0; i < width*width; i++) {
             const sq = document.createElement('div')
             sq.setAttribute('id', i)
@@ -144,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 89) {
+            if (currentId < 90) {
                 const newId = sqs[parseInt(currentId) +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
@@ -164,7 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     }
-
+    //array shuffle
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
 
     //check win condition
 
