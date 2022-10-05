@@ -1,21 +1,30 @@
 .grid{
 
-    width: 400px;
-    height: 400px;
+    width: 800px;
+    height: 800px;
     display:flex;
     flex-wrap:wrap;
-    background-color: grey;
+    
+    text-align:center;
+    line-height: 2.5;
+    border: 10px;
 }
 
 .grid div{
-    height:40px;
-    width:40px;
+    height:34px;
+    width:34px;
+    margin:1px;
+    border-style:solid;
+    border-color: black;
+    padding: 0;
+    margin: 0;
 }
 
 .checked{
     background-color: red;
+    
 }
 .bomb {
-    background-color: orange;
+    
 }
 

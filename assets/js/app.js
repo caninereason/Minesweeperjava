@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
-    let width = 10
+   let scale = 10
     let bombAmount = 20
-
+    let width = (10 +scale)
     let flags = 0
     let sqs = []
     let isGameOver = false
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sq.classList.add(shuffledArray[i])
             grid.appendChild(sq)
             sqs.push(sq)
-
+            console.log(sqs.length)
 
             //normal click
             sq.addEventListener('click', function(e) {
@@ -38,18 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // add numbers
         for (let i = 0; i < sqs.length; i++) {
             let total = 0
-            const lEdge = (i % width === 0)
-            const rEdge = (i % width === width - 1)
+            const lEdge = (i*2 % width === 0)
+            const rEdge = (i*2 % width === width - 1)
 
             if (sqs[i].classList.contains('valid')) {
                 if (i > 0 && !lEdge && sqs[i -1].classList.contains('bomb')) total++
-                if (i > 9 && !rEdge && sqs[i +1 -width].classList.contains('bomb')) total++
-                if (i >= 10 && sqs[i -width].classList.contains('bomb')) total++
-                if (i >= 11 && !lEdge && sqs[i -1 -width].classList.contains('bomb')) total++
-                if (i <= 98 && !rEdge && sqs[i +1].classList.contains('bomb')) total++
-                if (i < 90 && !lEdge && sqs[i -1 +width].classList.contains('bomb')) total++
-                if (i <= 88 && !rEdge && sqs[i +1 +width].classList.contains('bomb')) total++
-                if (i <= 89 && sqs[i +width].classList.contains('bomb')) total++
+                if (i > 9+scale && !rEdge && sqs[i +1 -width].classList.contains('bomb')) total++
+                if (i >= 10+scale && sqs[i -width].classList.contains('bomb')) total++
+                if (i >= 11+scale && !lEdge && sqs[i -1 -width].classList.contains('bomb')) total++
+                if (i <= 398 && !rEdge && sqs[i +1].classList.contains('bomb')) total++
+                if (i < 380 && !lEdge && sqs[i -1 +width].classList.contains('bomb')) total++
+                if (i <= 378 && !rEdge && sqs[i +1 +width].classList.contains('bomb')) total++
+                if (i <= 379 && sqs[i +width].classList.contains('bomb')) total++
                 sqs[i].setAttribute('data', total)
 
             }
@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // check squares for empty
 
     function checksq(sq, currentId) {
-        const Ledge = (currentId % width === 0)
-        const Redge = (currentId % width === width -1)
+        const Ledge = (currentId*2 % width === 0)
+        const Redge = (currentId*2 % width === width -1)
 
         setTimeout(() => {
             if (currentId > 0 && !Ledge) {
@@ -113,39 +113,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId > 9 && !Redge) {
+            if (currentId > 9 +scale && !Redge) {
 
                 const newId = sqs[parseInt(currentId) +1 - width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId > 10) {
+            if (currentId > 10 +scale) {
                 const newId = sqs[parseInt(currentId -width)].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId > 11 && !Ledge) {
+            if (currentId > 11 +scale && !Ledge) {
                 const newId = sqs[parseInt(currentId) -1 -width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 98 && !Redge) {
+            if (currentId < 399 && !Redge) {
 
                 const newId = sqs[parseInt(currentId) +1].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 90 && !Ledge) {
+            if (currentId < 380 && !Ledge) {
                 const newId = sqs[parseInt(currentId) -1 +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 88 && !Redge) {
+            if (currentId < 378 && !Redge) {
                 const newId = sqs[parseInt(currentId) +1 +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 90) {
+            if (currentId < 380) {
                 const newId = sqs[parseInt(currentId) +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
