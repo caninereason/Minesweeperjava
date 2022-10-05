@@ -53,6 +53,7 @@ createBoard()
 
     //click actions
     function click(sq){
+        let currentId = sq.id
         if(isGameOver) return
         if(sq.classList.contains('checked') || sq.classList.contains('flag')) return
         if(sq.classList.contains('bomb')){
@@ -64,10 +65,85 @@ createBoard()
                     sq.innerHTML = total
                     return
                 }
+                checksq(sq, currentId)
+            }
                 sq.classList.add('checked')
         }
-
-        }
     
+
+// check squares for empty
+
+function checksq(sq, currentId){
+const Ledge = (currentId % width ===0)
+const Redge = (currentId % width === width -1)
+
+    setTimeout(() =>{
+        if ( currentId > 0 && !Ledge ) {
+            const newId = sqs[parseInt(currentId) -1].id
+            const newSq = document.getElementById(newId)
+            click(newSq)
+        }
+        if(currentId > 9 && !Redge){
+            
+            const newId = sqs[parseInt(currentId) +1 -width].id
+            const newSq = document.getElementById(newId)
+            click(newSq)
+        }
+        if(currentId > 10){
+            const newId = sqs[parseInt(currentId - width)].id
+            const newSq = document.getElementById(newId)
+            click(newSq)
+        }
+        if ( currentId > 11 && !Ledge ) {
+            const newId = sqs[parseInt(currentId) -1 -width].id
+            const newSq = document.getElementById(newId)
+            click(newSq)
+        }
+        if(currentId < 98 && !Redge){
+            
+            const newId = sqs[parseInt(currentId) +1 ].id
+            const newSq = document.getElementById(newId)
+            click(newSq)
+        }
+        if ( currentId < 90 && !Ledge ) {
+            const newId = sqs[parseInt(currentId) -1 + width].id
+            const newSq = document.getElementById(newId)
+            click(newSq)
+        }
+        if ( currentId < 88 && !Redge ) {
+            const newId = sqs[parseInt(currentId) +1 +width].id
+            const newSq = document.getElementById(newId)
+            click(newSq)
+        }    
+        if ( currentId < 89 ) {
+            const newId = sqs[parseInt(currentId) +width].id
+            const newSq = document.getElementById(newId)
+            click(newSq)
+        }    
+    }, 10)
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 })
