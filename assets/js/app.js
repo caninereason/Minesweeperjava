@@ -53,7 +53,16 @@ createBoard()
     //click actions
     function click(square){
         if(square.classList.contains('bomb')){
-            alert('Game Over')}
+            console.log('Game Over')}
+            else{
+                let total = square.getAttribute('data')
+                if(total !=0) {
+                    square.classList.add('checked')
+                    square.innerHTML = total
+                    return
+                }
+        }
+
         }
     
 
