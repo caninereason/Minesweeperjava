@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
    let scale = 10
-    let bombAmount = 20
+    let bombAmount =70
     let width = (10 +scale)
     let flags = 0
     let sqs = []
