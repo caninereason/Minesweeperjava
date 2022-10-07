@@ -1,27 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.querySelector('.grid')
-   let scale = 10
-    let bombAmount =70
+    let grid = document.querySelector('.grid')
+   let scale =document.getElementById("form").elements["number"]
+    let bombAmount =20+(scale*5)
     let width = (10 +scale)
     let flags = 0
     let sqs = []
     let isGameOver = false
+    let gameArray = width*width
+    grid.style.width = width*"40"+"px"
+    grid.style.height = width*"40"+"px"
     //create Board
     function createBoard() {
         //get shuffled game array
         const bombsArray = Array(bombAmount).fill('bomb')
         const emptyArray = Array(width*width - bombAmount).fill('valid')
-        const gameArray = emptyArray.concat(bombsArray)
+        gameArray = emptyArray.concat(bombsArray)
         shuffleArray(gameArray)
         const shuffledArray = gameArray.sort(() => Math.random() -0.5)
-          
+          //console.log(gameArray.length -2)
         for (let i = 0; i < width*width; i++) {
             const sq = document.createElement('div')
             sq.setAttribute('id', i)
             sq.classList.add(shuffledArray[i])
             grid.appendChild(sq)
             sqs.push(sq)
-            console.log(sqs.length)
+           // console.log(sqs.length)
 
             //normal click
             sq.addEventListener('click', function(e) {
@@ -46,10 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (i > 9+scale && !rEdge && sqs[i +1 -width].classList.contains('bomb')) total++
                 if (i >= 10+scale && sqs[i -width].classList.contains('bomb')) total++
                 if (i >= 11+scale && !lEdge && sqs[i -1 -width].classList.contains('bomb')) total++
-                if (i <= 398 && !rEdge && sqs[i +1].classList.contains('bomb')) total++
-                if (i < 380 && !lEdge && sqs[i -1 +width].classList.contains('bomb')) total++
-                if (i <= 378 && !rEdge && sqs[i +1 +width].classList.contains('bomb')) total++
-                if (i <= 379 && sqs[i +width].classList.contains('bomb')) total++
+                if (i <=  gameArray.length -2 && !rEdge && sqs[i +1].classList.contains('bomb')) total++
+                if (i <  gameArray.length -width && !lEdge && sqs[i -1 +width].classList.contains('bomb')) total++
+                if (i <=  gameArray.length -width -2 && !rEdge && sqs[i +1 +width].classList.contains('bomb')) total++
+                if (i <=  gameArray.length -width -1 && sqs[i +width].classList.contains('bomb')) total++
                 sqs[i].setAttribute('data', total)
 
             }
@@ -105,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checksq(sq, currentId) {
         const Ledge = (currentId % width === 0)
-        const Redge = (currentId% width === width -1)
+        const Redge = (currentId % width === width -1)
 
         setTimeout(() => {
             if (currentId > 0 && !Ledge) {
@@ -129,23 +132,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 399 && !Redge) {
+            if (currentId < gameArray.length -2 && !Redge) {
 
                 const newId = sqs[parseInt(currentId) +1].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 380 && !Ledge) {
+            if (currentId < gameArray.length  -width && !Ledge) {
                 const newId = sqs[parseInt(currentId) -1 +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 378 && !Redge) {
+            if (currentId < gameArray.length  -width -2 && !Redge) {
                 const newId = sqs[parseInt(currentId) +1 +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 380) {
+            if (currentId < gameArray.length  -width) {
                 const newId = sqs[parseInt(currentId) +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
