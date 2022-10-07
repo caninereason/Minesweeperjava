@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // add numbers
         for (let i = 0; i < sqs.length; i++) {
             let total = 0
-            const lEdge = (i*2 % width === 0)
-            const rEdge = (i*2 % width === width - 1)
+            const lEdge = (i % width === 0)
+            const rEdge = (i % width === width - 1)
 
             if (sqs[i].classList.contains('valid')) {
                 if (i > 0 && !lEdge && sqs[i -1].classList.contains('bomb')) total++
@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // check squares for empty
 
     function checksq(sq, currentId) {
-        const Ledge = (currentId*2 % width === 0)
-        const Redge = (currentId*2 % width === width -1)
+        const Ledge = (currentId % width === 0)
+        const Redge = (currentId% width === width -1)
 
         setTimeout(() => {
             if (currentId > 0 && !Ledge) {
