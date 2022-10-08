@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid')
-   let scale =document.getElementById("form").elements["number"]
+   let scale =30
     let bombAmount =20+(scale*5)
     let width = (10 +scale)
     let flags = 0
