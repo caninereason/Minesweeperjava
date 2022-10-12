@@ -1,10 +1,13 @@
 .grid{
+  
+   
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
     justify-content: center;
     width: 400px;
     height: 400px;
-    display:flex;
-    flex-wrap:wrap;
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(173, 173, 173);
     text-align:center;
     line-height: 2.5;
     
@@ -14,7 +17,7 @@
     height:34px;
     width:34px;
     margin:1px;
-    border-style:solid;
+    border-style:groove;
     border-top-color: rgb(238, 238, 238);
     border-right-color: rgb(153, 153, 153);
     border-bottom-color: rgb(153, 153, 153);
@@ -28,6 +31,6 @@
 }
 
 .bomb {
-   
+   background-color: brown;
 }
 

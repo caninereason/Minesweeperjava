@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid')
-   let scale =document.getElementById("form").elements["num"].valueAsNumber
-    let bombAmount =scale   +(scale*5)
+    let scale =document.getElementById("form").elements["num"].valueAsNumber
+    let flagsLeft = document.querySelector('#flags-left')
+    let bombAmount =5  +(scale*5)
     let width = (10 +scale)
     let flags = 0
     let sqs = []
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 sq.innerHTML = '🚩'
                 flags++
                 flagsLeft.innerHTML = bombAmount - flags
+                win()
             } else {
                 sq.classList.remove('flag')
                 sq.innerHTML = ''
@@ -180,16 +182,17 @@ document.addEventListener('DOMContentLoaded', () => {
     //check win condition
 
     function win() {
-        let matches = 0
+        let match = 0
         for (let i = 0; i < sqs.length; i++) {
             if (sqs[i].classList.contains('flag') && sqs[i].classList.contains('bomb')) {
-                matches++
+                match++
             }
-            if (matches === bombAmount) {
+            if (match === bombAmount) {
                 console.log('You Win!')
             }
         }
     }
+    
 
 
 
