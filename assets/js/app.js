@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid')
     let scale =document.getElementById("form").elements["num"].valueAsNumber
     let flagsLeft = document.querySelector('#flags-left')
-    let bombAmount =5  +(scale*5)
+    let result =document.querySelector('#result')
+    let bombs =5  +(scale*5)
     let width = (10 +scale)
     let flags = 0
     let sqs = []
@@ -10,12 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let gameArray = width*width
     grid.style.width = width*"40"+"px"
     grid.style.height = width*"40"+"px"
+    flagsLeft.innerHTML = bombs - flags
     //create Board
     function createBoard() {
      //   console.log()
         //get shuffled game array
-        const bombsArray = Array(bombAmount).fill('bomb')
-        const emptyArray = Array(width*width - bombAmount).fill('valid')
+        const bombsArray = Array(bombs).fill('bomb')
+        const emptyArray = Array(width*width - bombs).fill('valid')
         gameArray = emptyArray.concat(bombsArray)
         shuffleArray(gameArray)
         const shuffledArray = gameArray.sort(() => Math.random() -0.5)
@@ -65,18 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addFlag(sq) {
         if (isGameOver) return
-        if (!sq.classList.contains('checked') && (flags < bombAmount)) {
-            if (!sq.classList.contains('flag')) {
+        if (!sq.classList.contains('checked') ) {
+            if (!sq.classList.contains('flag')&&flags!==bombs) {
                 sq.classList.add('flag')
                 sq.innerHTML = '🚩'
                 flags++
-                flagsLeft.innerHTML = bombAmount - flags
+                flagsLeft.innerHTML = bombs - flags
+                
                 win()
             } else {
                 sq.classList.remove('flag')
                 sq.innerHTML = ''
                 flags--
-                flagsLeft.innerHTML = bombAmount - flags
+                flagsLeft.innerHTML = bombs - flags
+            }
+        }
+        else{
+            if( sq.classList.contains('flag')){
+                sq.classList.remove('flag')
+                sq.innerHTML = ''
+                flags--
+                flagsLeft.innerHTML = bombs - flags
             }
         }
 
@@ -86,7 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function click(sq) {
         let currentId = sq.id
         if (isGameOver) return
-        if (sq.classList.contains('checked') || sq.classList.contains('flag')) return
+        if (sq.classList.contains('checked') ) return
+        if(sq.classList.contains('flag'))return
+        if( sq.classList.contains('flag')&&sq.classList.contains('checked') ){
+            sq.classList.remove('flag')
+            sq.innerHTML = ''
+            flags--
+            flagsLeft.innerHTML = bombs - flags
+            
+        }
         if (sq.classList.contains('bomb')) {
             gameOver(sq)
         }
@@ -102,8 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 return
             }
             checksq(sq, currentId)
+            
         }
         sq.classList.add('checked')
+
     }
 
 
@@ -114,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const Redge = (currentId % width === width -1)
 
         setTimeout(() => {
+           
             if (currentId > 0 && !Ledge) {
                 const newId = sqs[parseInt(currentId) -1].id
                 const newSq = document.getElementById(newId)
@@ -187,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sqs[i].classList.contains('flag') && sqs[i].classList.contains('bomb')) {
                 match++
             }
-            if (match === bombAmount) {
+            if (match === bombs) {
                 console.log('You Win!')
             }
         }
