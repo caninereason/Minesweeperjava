@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid')
-   let scale =30
-    let bombAmount =20+(scale*5)
+   let scale =document.getElementById("form").elements["num"].valueAsNumber
+    let bombAmount =scale   +(scale*5)
     let width = (10 +scale)
     let flags = 0
     let sqs = []
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.style.height = width*"40"+"px"
     //create Board
     function createBoard() {
+     //   console.log()
         //get shuffled game array
         const bombsArray = Array(bombAmount).fill('bomb')
         const emptyArray = Array(width*width - bombAmount).fill('valid')

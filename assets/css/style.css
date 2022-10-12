@@ -1,13 +1,13 @@
 .grid{
-
-    width: 440px;
-    height: 440px;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
     display:flex;
     flex-wrap:wrap;
-    
+    background-color: rgb(202, 202, 202);
     text-align:center;
     line-height: 2.5;
-    border: 10px;
+    
 }
 
 .grid div{
@@ -15,16 +15,19 @@
     width:34px;
     margin:1px;
     border-style:solid;
-    border-color: black;
+    border-top-color: rgb(238, 238, 238);
+    border-right-color: rgb(153, 153, 153);
+    border-bottom-color: rgb(153, 153, 153);
+    border-left-color: rgb(238, 238, 238);
     padding: 0;
     margin: 0;
 }
-
 .checked{
-    background-color: red;
+    background-color: rgb(224, 224, 224);
     
 }
+
 .bomb {
-    background-color: rgb(0, 238, 255);
+   
 }
 
