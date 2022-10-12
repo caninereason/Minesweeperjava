@@ -67,8 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addFlag(sq) {
         if (isGameOver) return
+        
         if (!sq.classList.contains('checked') ) {
-            if (!sq.classList.contains('flag')&&flags!==bombs) {
+            if 
+            (!sq.classList.contains('flag')) {
+                if(flags==bombs)return
                 sq.classList.add('flag')
                 sq.innerHTML = '🚩'
                 flags++
