@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isGameOver) return
         if (sq.classList.contains('checked') ) return
         if(sq.classList.contains('flag'))return
-        if( sq.classList.contains('flag')&&sq.classList.contains('checked') ){
+        if( sq.classList.contains('flag') ){
             sq.classList.remove('flag')
             sq.innerHTML = ''
             flags--

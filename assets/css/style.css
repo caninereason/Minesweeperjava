@@ -9,8 +9,10 @@
     height: 400px;
     background-color: rgb(173, 173, 173);
     text-align:center;
-    line-height: 2.5;
-    
+    line-height:2;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: larger;
 }
 
 .grid div{
@@ -33,4 +35,15 @@
 .bomb {
    background-color: brown;
 }
-
+.one{
+    color: blue;
+}
+.two{
+    color:green;
+}
+.three{
+    color:red;
+}
+.four{
+    color:purple;
+}
