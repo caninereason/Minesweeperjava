@@ -102,13 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isGameOver) return
         if (sq.classList.contains('checked') ) return
         if(sq.classList.contains('flag'))return
-        if( sq.classList.contains('flag') ){
-            sq.classList.remove('flag')
-            sq.innerHTML = ''
-            flags--
-            flagsLeft.innerHTML = bombs - flags
-            
-        }
+        
         if (sq.classList.contains('bomb')) {
             gameOver(sq)
         }
@@ -150,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId > 10 +scale) {
+            if (currentId >= 10 +scale) {
                 const newId = sqs[parseInt(currentId -width)].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
@@ -181,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-        }, 10)
+        }, 20)
     }
 
     // game end
@@ -218,7 +212,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    var modal = document.getElementById("myModal");
 
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    } 
 
 
 
