@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function gameOver(sq) {
         console.log('KABOOM ! Game Over')
         isGameOver = true
-
+        modal.style.display = "block";
         //show bombs
         sqs.forEach(sq => {
             if (sq.classList.contains('bomb')) {
@@ -276,6 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (match === bombs) {
                 console.log('You Win!')
+                modal.style.display = "block";
             }
         }
     }

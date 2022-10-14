@@ -98,7 +98,7 @@ user-select: none; /* Standard */
     width: 400px;
    
     margin:0 auto;
-   
+   top: 0px;
     position: absolute;
     left: 0;
     right:0;
@@ -109,5 +109,5 @@ user-select: none; /* Standard */
   /* Add Animation */
   @keyframes animatetop {
     from {top: -200px; opacity: 1}
-    to {top: 30px; opacity: 1}
+    to {top: 0px; opacity: 1}
   } 
