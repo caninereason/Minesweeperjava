@@ -1,27 +1,101 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.querySelector('.grid')
-   let scale = 10
-    let bombAmount = 20
-    let width = 10
+    let grid = document.querySelector('.grid')
+    // let scale =document.getElementById("form").elements["num"].valueAsNumber
+    let scale
+    let flagsLeft = 5
+    let result =document.querySelector('#result')
+    let bombs 
+    let width 
     let flags = 0
-    let sqs = []
+    var sq
+    let sqs =[]
     let isGameOver = false
+    let gameArray 
+    var bombsArray
+    var emptyArray
+    flagsLeft.innerHTML = bombs - flags
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    var Easy = document.getElementById("Easy");
+    var Medium = document.getElementById("Medium");
+    var Hard = document.getElementById("Hard");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    Easy.onclick = function() {
+        scale =0;
+        width = (10 +scale)
+        bombs =5  +(scale*5)
+        grid.style.width = width*"40"+"px"
+        grid.style.height = width*"40"+"px"
+        gameArray = width*width
+        
+        
+        
+        createBoard()
+        modal.style.display = "none";
+      }
+      Medium.onclick = function() {
+        scale =2;
+        width = (10 +scale)
+        bombs =5  +(scale*5)
+        grid.style.width = width*"40"+"px"
+        grid.style.height = width*"40"+"px"
+        gameArray = width*width
+       
+        grid.innerHTML = '';
+        createBoard()
+        modal.style.display = "none";
+      }
+      Hard.onclick = function() {
+        
+        scale =5;
+        width = (10 +scale)
+        bombs =5  +(scale*5)
+        grid.style.width = width*"40"+"px"
+        grid.style.height = width*"40"+"px"
+        gameArray = width*width
+        grid.innerHTML = '';
+        createBoard()
+        modal.style.display = "none";
+        
+      }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    } 
     //create Board
     function createBoard() {
+     //   console.log()
+     
         //get shuffled game array
-        const bombsArray = Array(bombAmount).fill('bomb')
-        const emptyArray = Array(width*width - bombAmount).fill('valid')
-        const gameArray = emptyArray.concat(bombsArray)
+        
+        var bombsArray = Array(bombs).fill('bomb')
+        var emptyArray = Array(width*width - bombs).fill('valid')
+        gameArray = emptyArray.concat(bombsArray)
         shuffleArray(gameArray)
         const shuffledArray = gameArray.sort(() => Math.random() -0.5)
-          
+          //console.log(gameArray.length -2)
         for (let i = 0; i < width*width; i++) {
-            const sq = document.createElement('div')
+             sq = document.createElement('div')
             sq.setAttribute('id', i)
             sq.classList.add(shuffledArray[i])
             grid.appendChild(sq)
             sqs.push(sq)
-
+           // console.log(sqs.length)
 
             //normal click
             sq.addEventListener('click', function(e) {
@@ -43,13 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (sqs[i].classList.contains('valid')) {
                 if (i > 0 && !lEdge && sqs[i -1].classList.contains('bomb')) total++
-                if (i > 9 && !rEdge && sqs[i +1 -width].classList.contains('bomb')) total++
-                if (i >= 10 && sqs[i -width].classList.contains('bomb')) total++
-                if (i >= 11 && !lEdge && sqs[i -1 -width].classList.contains('bomb')) total++
-                if (i <= 98 && !rEdge && sqs[i +1].classList.contains('bomb')) total++
-                if (i < 90 && !lEdge && sqs[i -1 +width].classList.contains('bomb')) total++
-                if (i <= 88 && !rEdge && sqs[i +1 +width].classList.contains('bomb')) total++
-                if (i <= 89 && sqs[i +width].classList.contains('bomb')) total++
+                if (i > 9+scale && !rEdge && sqs[i +1 -width].classList.contains('bomb')) total++
+                if (i >= 10+scale && sqs[i -width].classList.contains('bomb')) total++
+                if (i >= 11+scale && !lEdge && sqs[i -1 -width].classList.contains('bomb')) total++
+                if (i <=  gameArray.length -2 && !rEdge && sqs[i +1].classList.contains('bomb')) total++
+                if (i <  gameArray.length -width && !lEdge && sqs[i -1 +width].classList.contains('bomb')) total++
+                if (i <=  gameArray.length -width -2 && !rEdge && sqs[i +1 +width].classList.contains('bomb')) total++
+                if (i <=  gameArray.length -width -1 && sqs[i +width].classList.contains('bomb')) total++
                 sqs[i].setAttribute('data', total)
 
             }
@@ -60,17 +134,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addFlag(sq) {
         if (isGameOver) return
-        if (!sq.classList.contains('checked') && (flags < bombAmount)) {
-            if (!sq.classList.contains('flag')) {
+        
+        if (!sq.classList.contains('checked') ) {
+            if 
+            (!sq.classList.contains('flag')) {
+                if(flags==bombs)return
                 sq.classList.add('flag')
                 sq.innerHTML = '🚩'
                 flags++
-                flagsLeft.innerHTML = bombAmount - flags
+                flagsLeft.innerHTML = bombs - flags
+                
+                win()
             } else {
                 sq.classList.remove('flag')
                 sq.innerHTML = ''
                 flags--
-                flagsLeft.innerHTML = bombAmount - flags
+                flagsLeft.innerHTML = bombs - flags
+            }
+        }
+        else{
+            if( sq.classList.contains('flag')){
+                sq.classList.remove('flag')
+                sq.innerHTML = ''
+                flags--
+                flagsLeft.innerHTML = bombs - flags
             }
         }
 
@@ -80,7 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function click(sq) {
         let currentId = sq.id
         if (isGameOver) return
-        if (sq.classList.contains('checked') || sq.classList.contains('flag')) return
+        if (sq.classList.contains('checked') ) return
+        if(sq.classList.contains('flag'))return
+        
         if (sq.classList.contains('bomb')) {
             gameOver(sq)
         }
@@ -96,8 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 return
             }
             checksq(sq, currentId)
+            
         }
         sq.classList.add('checked')
+
     }
 
 
@@ -108,49 +199,50 @@ document.addEventListener('DOMContentLoaded', () => {
         const Redge = (currentId % width === width -1)
 
         setTimeout(() => {
+           
             if (currentId > 0 && !Ledge) {
                 const newId = sqs[parseInt(currentId) -1].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId > 9 && !Redge) {
+            if (currentId > 9 +scale && !Redge) {
 
                 const newId = sqs[parseInt(currentId) +1 - width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId > 10) {
+            if (currentId >= 10 +scale) {
                 const newId = sqs[parseInt(currentId -width)].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId > 11 && !Ledge) {
+            if (currentId > 11 +scale && !Ledge) {
                 const newId = sqs[parseInt(currentId) -1 -width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 98 && !Redge) {
+            if (currentId < gameArray.length -2 && !Redge) {
 
                 const newId = sqs[parseInt(currentId) +1].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 90 && !Ledge) {
+            if (currentId < gameArray.length  -width && !Ledge) {
                 const newId = sqs[parseInt(currentId) -1 +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 88 && !Redge) {
+            if (currentId < gameArray.length  -width -2 && !Redge) {
                 const newId = sqs[parseInt(currentId) +1 +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-            if (currentId < 90) {
+            if (currentId < gameArray.length  -width) {
                 const newId = sqs[parseInt(currentId) +width].id
                 const newSq = document.getElementById(newId)
                 click(newSq)
             }
-        }, 10)
+        }, 20)
     }
 
     // game end
@@ -176,17 +268,18 @@ document.addEventListener('DOMContentLoaded', () => {
     //check win condition
 
     function win() {
-        let matches = 0
+        let match = 0
         for (let i = 0; i < sqs.length; i++) {
             if (sqs[i].classList.contains('flag') && sqs[i].classList.contains('bomb')) {
-                matches++
+                match++
             }
-            if (matches === bombAmount) {
+            if (match === bombs) {
                 console.log('You Win!')
             }
         }
     }
-
+    
+  
 
 
 

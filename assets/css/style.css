@@ -82,6 +82,10 @@ user-select: none; /* Standard */
   
   /* Modal Content */
   .modal-content {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
     
     background-color: #fefefe;
     margin: auto;
@@ -91,19 +95,19 @@ user-select: none; /* Standard */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: animatetop;
     animation-duration: 0.4s;
-    width: 100px;
+    width: 400px;
    
     margin:0 auto;
-    display:table;
+   
     position: absolute;
     left: 0;
     right:0;
-    
+    justify-items: center;
     border:1px solid;
   }
   
   /* Add Animation */
   @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+    from {top: -200px; opacity: 1}
+    to {top: 30px; opacity: 1}
   } 
