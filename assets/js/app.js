@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameOver = false
         scale =0;
         width = (10 +scale)
-        bombs =5  +(scale*5)
+        bombs =10  +(scale*5)
         flagsLeft.innerHTML = bombs - flags
         grid.style.width = width*"40"+"px"
         grid.style.height = width*"40"+"px"
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameOver = false
         scale =2;
         width = (10 +scale)
-         bombs =5  +(scale*5)
+         bombs =15  +(scale*5)
          flagsLeft.innerHTML = bombs - flags
         grid.style.width = width*"40"+"px"
         grid.style.height = width*"40"+"px"
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameOver = false
         scale =5;
         width = (10 +scale)
-         bombs =5  +(scale*5)
+         bombs =25 +(scale*5)
          flagsLeft.innerHTML = bombs - flags
         grid.style.width = width*"40"+"px"
         grid.style.height = width*"40"+"px"
@@ -281,6 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (match === bombs) {
                 console.log('You Win!')
                 modal.style.display = "block";
+                flags=0;
             }
         }
     }

@@ -29,6 +29,7 @@ user-select: none; /* Standard */
 }
 
 .grid div{
+    
     height:34px;
     width:34px;
     margin:1px;
@@ -46,7 +47,7 @@ user-select: none; /* Standard */
 }
 
 .bomb {
-   
+    background-color: blue;
 }
 .one{
     color: blue;
@@ -108,6 +109,6 @@ user-select: none; /* Standard */
   
   /* Add Animation */
   @keyframes animatetop {
-    from {top: -200px; opacity: 1}
+    from {top: -200px; opacity: 0}
     to {top: 0px; opacity: 1}
   } 
