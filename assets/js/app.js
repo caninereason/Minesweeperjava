@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         won = false
         width = (10 +scale)
         bombs +=(scale*5)
-        flagsLeft.innerHTML = bombs - flags
+        flagsLeft.innerHTML = bombs 
         grid.style.width = width*"40"+"px"
         grid.style.height = width*"40"+"px"
         grid.innerHTML=''
@@ -169,8 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //click actions
     function click(sq) {
-        if (won==true)return
-        if (mod==true)return
+        if (won)return
+        if (mod)return
         let currentId = sq.id
         if (isGameOver) return
         if (sq.classList.contains('checked') ) return
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameOver = true
         flags = 0
         modal.style.display = "block";
-        var mod =true;
+        mod =true;
         //show bombs
         sqs.forEach(sq => {
             if (sq.classList.contains('bomb')) {
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (match === bombs) {
                 won = true
-                var mod =true;
+                mod =true;
                 console.log('You Win!')
                 modal.style.display = "block";
                 flags=0;
