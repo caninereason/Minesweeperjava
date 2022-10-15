@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         grid.style.width = width*"40"+"px"
         grid.style.height = width*"40"+"px"
         grid.innerHTML=''
+        flags = 0
         sqs=[]
         createBoard()
         modal.style.display = "none";
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         grid.style.width = width*"40"+"px"
         grid.style.height = width*"40"+"px"
         grid.innerHTML=''
+        flags = 0
         sqs=[]
         createBoard()
         modal.style.display = "none";
@@ -64,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         grid.style.width = width*"40"+"px"
         grid.style.height = width*"40"+"px"
         grid.innerHTML=''
+        flags = 0
         sqs=[]
         createBoard()
         modal.style.display = "none";
@@ -250,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function gameOver(sq) {
         console.log('KABOOM ! Game Over')
         isGameOver = true
+        flags = 0
         modal.style.display = "block";
         //show bombs
         sqs.forEach(sq => {
