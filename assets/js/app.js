@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.style.height = width*"40"+"px"
     flagsLeft.innerHTML = bombs - flags
     var modal = document.getElementById("myModal");
-
+    var mod =true
+    var won
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
     var Easy = document.getElementById("Easy");
@@ -26,8 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
       modal.style.display = "block";
+      mod =true;
+      
     }
     Easy.onclick = function() {
+       
         isGameOver = false
         scale =0;
         width = (10 +scale)
@@ -41,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         createBoard()
         modal.style.display = "none";
         console.log(scale)
+        mod =false
+        won = false
       }
       Medium.onclick = function() {
         isGameOver = false
@@ -56,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
         createBoard()
         modal.style.display = "none";
         console.log(scale)
+         mod =false;
+         won = false
       }
       Hard.onclick = function() {
         isGameOver = false
@@ -71,16 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
         createBoard()
         modal.style.display = "none";
         console.log(scale)
+         mod =false;
+         won = false
       }
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
       modal.style.display = "none";
+       mod =false;
     }
     
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
+        
       }
     } 
     //create Board
@@ -134,11 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     }
-    //createBoard()
+    createBoard()
 
     function addFlag(sq) {
         if (isGameOver) return
-        
+        if (mod==true)return
+        if (won==true)return
         if (!sq.classList.contains('checked') ) {
             if 
             (!sq.classList.contains('flag')) {
@@ -169,6 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //click actions
     function click(sq) {
+        if (won==true)return
+        if (mod==true)return
         let currentId = sq.id
         if (isGameOver) return
         if (sq.classList.contains('checked') ) return
@@ -255,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isGameOver = true
         flags = 0
         modal.style.display = "block";
+        var mod =true;
         //show bombs
         sqs.forEach(sq => {
             if (sq.classList.contains('bomb')) {
@@ -279,9 +295,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 match++
             }
             if (match === bombs) {
+                won = true
+                var mod =true;
                 console.log('You Win!')
                 modal.style.display = "block";
                 flags=0;
+                
             }
         }
     }
