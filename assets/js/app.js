@@ -32,10 +32,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     Easy.onclick = function() {
        
-        isGameOver = false
+        
         scale =0;
+        bombs=10
+        reset()
+      }
+      Medium.onclick = function() {
+        
+        scale =2;
+        
+         bombs =15 
+         reset()
+      }
+      Hard.onclick = function() {
+        
+        scale =5;
+        
+         bombs =25 
+         reset()
+      }
+      function reset(){
+        isGameOver = false
+        mod =false
+        won = false
         width = (10 +scale)
-        bombs =10  +(scale*5)
+        bombs +=(scale*5)
         flagsLeft.innerHTML = bombs - flags
         grid.style.width = width*"40"+"px"
         grid.style.height = width*"40"+"px"
@@ -44,43 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
         sqs=[]
         createBoard()
         modal.style.display = "none";
-        console.log(scale)
-        mod =false
-        won = false
-      }
-      Medium.onclick = function() {
-        isGameOver = false
-        scale =2;
-        width = (10 +scale)
-         bombs =15  +(scale*5)
-         flagsLeft.innerHTML = bombs - flags
-        grid.style.width = width*"40"+"px"
-        grid.style.height = width*"40"+"px"
-        grid.innerHTML=''
-        flags = 0
-        sqs=[]
-        createBoard()
-        modal.style.display = "none";
-        console.log(scale)
-         mod =false;
-         won = false
-      }
-      Hard.onclick = function() {
-        isGameOver = false
-        scale =5;
-        width = (10 +scale)
-         bombs =25 +(scale*5)
-         flagsLeft.innerHTML = bombs - flags
-        grid.style.width = width*"40"+"px"
-        grid.style.height = width*"40"+"px"
-        grid.innerHTML=''
-        flags = 0
-        sqs=[]
-        createBoard()
-        modal.style.display = "none";
-        console.log(scale)
-         mod =false;
-         won = false
+        
+       
+
       }
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
