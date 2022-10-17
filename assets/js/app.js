@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if(!pause){
-            
+            tut=true;
+        tutorial();
       modal.style.display = "block";
       mod =true;
       pause=true;}

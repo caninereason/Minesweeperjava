@@ -1,9 +1,11 @@
 .container{
+    position: relative;
 border:40px;
 border-style:solid;
 border-width: 10px;
 
 border-color: #888;
+top: 30px;
 }
 #menu{
     display:flex;
@@ -165,6 +167,7 @@ user-select: none; /* Standard */
   
   /* Modal Content */
   .modal-content {
+    z-index: 3;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
