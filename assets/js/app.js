@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var mod =true
     var won
     var pause=true;
+    
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
     var Easy = document.getElementById("Easy");
@@ -25,11 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     var sign =document.getElementById('text')
+    var face =document.getElementById('face')
+    sign.textContent  ='Minesweeper'
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
+        if(won||isGameOver)return
+        if(!pause){
       modal.style.display = "block";
       mod =true;
-      pause=true;
+      pause=true;}
+      else{
+        modal.style.display = "none";
+       mod =false;
+       pause=false;
+      }
       
     }
     Easy.onclick = function() {
@@ -56,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
       function reset(){
         timer =-1;
         pause=false;
-        
+        face.innerHTML="🙂"
+        sign.textContent  ='Minesweeper'
         isGameOver = false
         mod =false
         won = false
@@ -76,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
+        if(won||isGameOver)return
       modal.style.display = "none";
        mod =false;
        pause=false;
@@ -253,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // game end
     function gameOver(sq) {
+        face.innerHTML="😵"
         pause=true;
         sign.textContent  ='KABOOM ! Game Over'
         isGameOver = true
@@ -283,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 match++
             }
             if (match === bombs) {
+                face.innerHTML="🤩"
                 pause=true;
                 sign.textContent='YOU WIN!'
                 won = true

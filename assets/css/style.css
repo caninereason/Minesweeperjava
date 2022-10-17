@@ -1,6 +1,8 @@
 .container{
-border:50px;
-border-style: solid;
+border:40px;
+border-style:solid;
+border-width: 10px;
+
 border-color: #888;
 }
 #menu{
@@ -10,7 +12,7 @@ border-color: #888;
    /* border-style: solid; */
  background-color:#888;;
  justify-content: space-between;
- 
+ padding-bottom: 10px;
  }
  #myBtn{
     display: flex;
@@ -123,7 +125,7 @@ user-select: none; /* Standard */
 }
 
 .bomb {
-   
+   background-color: #5cb85c;
 }
 .one{
     color: blue;
