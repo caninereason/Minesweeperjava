@@ -125,7 +125,7 @@ user-select: none; /* Standard */
 }
 
 .bomb {
-   background-color: #5cb85c;
+   
 }
 .one{
     color: blue;
@@ -146,6 +146,8 @@ user-select: none; /* Standard */
  .modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
+    
+    text-align: center;
     color: white;
   }
   
@@ -154,6 +156,8 @@ user-select: none; /* Standard */
   
   /* Modal Footer */
   .modal-footer {
+    display: flex;
+    justify-content: space-between;
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
@@ -165,8 +169,8 @@ user-select: none; /* Standard */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
-    
-    background-color: #fefefe;
+    display: inline-block;
+    background-color: #00ff40;
     margin: auto;
     padding: 0;
     border: 1px solid #888;

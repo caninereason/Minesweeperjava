@@ -14,10 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.style.height = width*"40"+"px"
     flagsLeft.innerHTML = bombs - flags
     var modal = document.getElementById("myModal");
+    var note = document.getElementById("note");
     var mod =true
     var won
     var pause=true;
-    
+    var tut =true;
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
     var Easy = document.getElementById("Easy");
@@ -27,10 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
     var span = document.getElementsByClassName("close")[0];
     var sign =document.getElementById('text')
     var face =document.getElementById('face')
+    var guide =document.getElementById('guide')
     sign.textContent  ='Minesweeper'
     // When the user clicks on the button, open the modal
+   
     btn.onclick = function() {
-        if(won||isGameOver)return
+        if(won||isGameOver){tut=true;
+        tutorial();
+        tut=false;
+        return;
+        }
+
         if(!pause){
       modal.style.display = "block";
       mod =true;
@@ -41,7 +49,23 @@ document.addEventListener('DOMContentLoaded', () => {
        pause=false;
       }
       
+       
+      
     }
+    function tutorial(){
+        if (tut){
+            note.textContent="Clear all the mines! Reveal squares by clicking on them. If the square is empty, you will reveal how many neighbouring squares have mines, but if you click a mine, all the bombs will explode, right-click(or hold a square on mobile) to flag a potential mine, right-click again to remove a flag. When you have flagged all the bombs you win!"
+        }
+        else{
+            note.textContent=""
+        }
+    }
+    guide.onclick=function(){
+       
+      tutorial();
+    tut= !tut
+    }
+    
     Easy.onclick = function() {
        
         
@@ -64,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
          reset()
       }
       function reset(){
+        note.textContent=""
         timer =-1;
         pause=false;
         face.innerHTML="🙂"
