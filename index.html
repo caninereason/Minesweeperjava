@@ -10,7 +10,7 @@
 </head>
 <body>
    <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -19,7 +19,7 @@
 <div class="modal-content">
   <div class="modal-header">
     <span class="close">&times;</span>
-    <h2>Modal Header</h2>
+    <h2 id="text"><h3></h3></h2>
   </div>
   <div class="modal-body">
     
@@ -32,16 +32,21 @@
   </div>
 </div> 
 
-</div> 
+</div>
+
+  
 <div class="main">
+  
   <div class="container">
+    <div id='menu'><div id='flags-left'></div><button id="myBtn"><span>🙂</span></button><div class="timer">0</div></div>
     <div class="grid"></div>
-    <div>Flags left: <span id='flags-left'></span></div>
+    
     <div id="result"></div>
   </div>
   <form id ="form">
     <input type="number" id="num" name ="num" min="0" max="20" value="0">
     </form>
   </div>
+
 </body>
 </html>

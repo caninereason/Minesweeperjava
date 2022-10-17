@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var modal = document.getElementById("myModal");
     var mod =true
     var won
+    var pause=true;
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
     var Easy = document.getElementById("Easy");
@@ -23,11 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     var Hard = document.getElementById("Hard");
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-    
+    var sign =document.getElementById('text')
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
       modal.style.display = "block";
       mod =true;
+      pause=true;
       
     }
     Easy.onclick = function() {
@@ -52,6 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
          reset()
       }
       function reset(){
+        timer =-1;
+        pause=false;
+        
         isGameOver = false
         mod =false
         won = false
@@ -73,15 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
     span.onclick = function() {
       modal.style.display = "none";
        mod =false;
+       pause=false;
     }
     
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-        
-      }
-    } 
+    
     //create Board
     function createBoard() {
      //   console.log()
@@ -253,7 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // game end
     function gameOver(sq) {
-        console.log('KABOOM ! Game Over')
+        pause=true;
+        sign.textContent  ='KABOOM ! Game Over'
         isGameOver = true
         flags = 0
         modal.style.display = "block";
@@ -282,6 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 match++
             }
             if (match === bombs) {
+                pause=true;
+                sign.textContent='YOU WIN!'
                 won = true
                 mod =true;
                 console.log('You Win!')
@@ -292,7 +295,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-  
+  //timer logic
+  var timer = 0;
+  let time = document.querySelector('.timer')
+var interval = setInterval(function() {
+    if(!pause){
+    timer++;
+    time.innerHTML=timer;
+    if (timer === 1000) clearInterval(interval);
+    }
+}, 1000);
 
 
 
