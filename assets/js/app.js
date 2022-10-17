@@ -31,15 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
     var guide =document.getElementById('guide')
     sign.textContent  ='Minesweeper'
     // When the user clicks on the button, open the modal
-   
+   tutorial()
     btn.onclick = function() {
         if(won||isGameOver){tut=true;
         tutorial();
-        tut=false;
+        
         return;
         }
 
         if(!pause){
+            
       modal.style.display = "block";
       mod =true;
       pause=true;}
@@ -61,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     guide.onclick=function(){
-       
+        tut= !tut
       tutorial();
-    tut= !tut
+    
     }
     
     Easy.onclick = function() {
@@ -88,6 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
          reset()
       }
       function reset(){
+        tut=false;
+        
+        tutorial();
+        
         note.textContent=""
         timer =-1;
         pause=false;
@@ -290,6 +295,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // game end
     function gameOver(sq) {
+        tut=false;
+        
+        tutorial();
         face.innerHTML="😵"
         pause=true;
         sign.textContent  ='KABOOM ! Game Over'
@@ -321,6 +329,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 match++
             }
             if (match === bombs) {
+                tut=false;
+        
+                tutorial();
                 face.innerHTML="🤩"
                 pause=true;
                 sign.textContent='YOU WIN!'
