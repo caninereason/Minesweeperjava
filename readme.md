@@ -4,5 +4,5 @@ https://codepen.io/srikarg/pen/kKVJVa
 tidy up code
 readme
 screeenshots
-
+bug: phone width screwy
 header footer 
