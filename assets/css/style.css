@@ -1,5 +1,5 @@
 body{
-    overflow: hidden;git
+    overflow: hidden;
 }
 .container{
     position: relative;
@@ -84,7 +84,7 @@ top: 30px;
 .main{
     display:grid;
     
-    grid-template-rows:100vh;
+    
     align-items:center;
     justify-content: center;
     
