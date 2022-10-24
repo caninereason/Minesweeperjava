@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tutorial();
         
         note.textContent=""
-        timer =-1;
+        timer = -1;
         pause=false;
         face.innerHTML="🙂"
         sign.textContent  ='Minesweeper'
@@ -347,13 +347,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
   //timer logic
-  var timer = 0;
+  var timer = 990;
   let time = document.querySelector('.timer')
 var interval = setInterval(function() {
     if(!pause){
     timer++;
     time.innerHTML=timer;
-    if (timer === 1000) clearInterval(interval);
+    if (timer === 999) gameOver();
     }
 }, 1000);
 
