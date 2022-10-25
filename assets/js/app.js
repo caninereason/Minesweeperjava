@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
   //timer logic
-  var timer = 990;
+  var timer = 0;
   let time = document.querySelector('.timer')
 var interval = setInterval(function() {
     if(!pause){
