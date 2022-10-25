@@ -7,7 +7,14 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.close{
+    color: #ffffff;
+   
+}
+#level{
+    display: flex;
+    justify-content: space-evenly;
+}
 #title{
     position: relative;
     justify-content: center;
@@ -19,7 +26,7 @@ body{
     position: relative;
 /* border:40px; */
 border-style:solid;
-bottom:100px;
+bottom:140px;
 /* border-width: 10px; */
 
 
@@ -161,6 +168,7 @@ user-select: none; /* Standard */
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: larger;
+    
   }
   
   /* Modal Body */
@@ -194,18 +202,20 @@ user-select: none; /* Standard */
     width: 400px;
     mix-blend-mode:hard-light;
     margin:0 auto;
-   top: 135px;
+    top: 345px;
     position: absolute;
     left: 0;
     right:0;
     justify-items: center;
     border:1px solid;
+    
+    justify-content: space-around;
   }
   
   /* Add Animation */
   @keyframes animatetop {
     from {top: -200px; opacity: 0}
-    to {top: 135px; opacity: 1}
+    to {top: 345px; opacity: 1}
   } 
   /* Social-networks */
 .social-networks {
