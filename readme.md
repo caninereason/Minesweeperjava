@@ -18,6 +18,8 @@ The game has been tested on multiple browsers and devices, and appears to work f
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
 
+## Validation
+
 
 
 
@@ -48,3 +50,4 @@ readme
 screeenshots
 bug: phone width screwy
 header footer 
+^(\s)*$\n
