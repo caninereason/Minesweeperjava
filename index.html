@@ -1,70 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head>
-  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=0.6">  <title>Minesweeper</title>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.6">
+  <title>Minesweeper</title>
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💣</text></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
   </link>
   <script src="assets/js/app.js" charset="utf-8"></script>
- 
+
 </head>
+
 <body>
-  <!--title image--> 
-  <section id="title"> <img src="assets/images/title.webp" alt="Minesweeper"> </section>
+  <!--title image-->
+  <h1 id="title"> <img src="assets/images/title.webp" alt="Minesweeper"> </h1>
   <!-- The Modal -->
-  <div id="myModal" class="modal">    <!-- Modal content -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;
-       
       </span>
-      <div id = "level">
-         <button id="Easy">Easy</button>
-        <button id="Medium">Medium</button>
-        <button id="Hard">Hard</button>
+      <div id="level">
+        <button id="easy">Easy</button>
+        <button id="medium">Medium</button>
+        <button id="hard">Hard</button>
       </div>
-      
-      <div class="modal-header">        <h2 id="text">
+
+      <div class="modal-header">
+        <h2 id="text">
           <h3 id="note"></h3>
         </h2>
         <button id="guide">Guide</button>
-      </div>      <div class="modal-body">      </div>
-      <div class="modal-footer">       
       </div>
-    </div>  </div>  <div class="main">    <div class="container">
+      <div class="modal-body"> </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="container">
       <div id='menu'>
         <div id='flags-left'></div><button id="myBtn"><span id="face">🙂</span></button>
         <div class="timer">0</div>
       </div>
-      <div class="grid"></div>      <div id="result"></div>
+      <div class="grid"></div>
+      <div id="result"></div>
     </div>
-    <form id="form">    </form>
-    
+    <form id="form"> </form>
+
   </div>
   <footer>
     <div>
-        <ul class="social-networks">
-            <li>
-                <a href="https://facebook.com" target="_blank" rel="noopener"
-                    aria-label="Visit our Facebook page (opens in a new tab)"><i class="fab fa-facebook"></i></a>
-            </li>
-            <li>
-                <a href="https://twitter.com" target="_blank" rel="noopener"
-                    aria-label="Visit our Twitter page (opens in a new tab)"><i
-                        class="fab fa-twitter-square"></i></a>
-            </li>
-            <li>
-                <a href="https://youtube.com" target="_blank" rel="noopener"
-                    aria-label="Visit our YouTube page (opens in a new tab)"><i
-                        class="fab fa-youtube-square"></i></a>
-            </li>
-            <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener"
-                    aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram"></i></a>
-            </li>
-        </ul>
+      <ul class="social-networks">
+        <li>
+          <a href="https://facebook.com" target="_blank" rel="noopener"
+            aria-label="Visit our Facebook page (opens in a new tab)"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="https://twitter.com" target="_blank" rel="noopener"
+            aria-label="Visit our Twitter page (opens in a new tab)"><i class="fab fa-twitter-square"></i></a>
+        </li>
+        <li>
+          <a href="https://youtube.com" target="_blank" rel="noopener"
+            aria-label="Visit our YouTube page (opens in a new tab)"><i class="fab fa-youtube-square"></i></a>
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank" rel="noopener"
+            aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
     </div>
-    
-</footer>
-<script src="https://kit.fontawesome.com/a9b55b20ac.js" crossorigin="anonymous"></script>
+
+  </footer>
+  <script src="https://kit.fontawesome.com/a9b55b20ac.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

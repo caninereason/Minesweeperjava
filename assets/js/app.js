@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     var tut = true;
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
-    var Easy = document.getElementById("Easy");
-    var Medium = document.getElementById("Medium");
-    var Hard = document.getElementById("Hard");
+    var Easy = document.getElementById("easy");
+    var Medium = document.getElementById("medium");
+    var Hard = document.getElementById("hard");
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     var sign = document.getElementById('text')
