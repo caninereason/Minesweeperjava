@@ -6,8 +6,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 100%;
+    
 }
 .close{
     color: #ffffff;
@@ -24,8 +23,7 @@ body{
     text-align: center;
     margin: 0;
    padding: 0;
-   width: 100%;
-    height: 100%;
+  
 }
 .container{
     position: relative;
@@ -146,6 +144,7 @@ user-select: none; /* Standard */
     margin: 0;
 }
 .checked{
+    
     background-color: rgb(224, 224, 224);
     
 }
