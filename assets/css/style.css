@@ -23,13 +23,14 @@ body {
 
 .container {
     position: relative;
-    /* border:40px; */
-    border-style: solid;
+    border:10px;
+    border-style:double;
     bottom: 140px;
-    /* border-width: 10px; */
+    border-width:5px;
+    
 
 
-    border-color: #888;
+    border-color: rgb(63, 63, 63);
     /* top: 30px; */
 }
 
@@ -80,7 +81,7 @@ body {
     grid-template-rows: 100vh;
     align-items: center;
     justify-content: center;
-
+    
     -webkit-user-select: none;
     /* Safari */
     -moz-user-select: none;
@@ -97,7 +98,7 @@ body {
 
     display: flex;
     flex-wrap: wrap;
-
+    
     width: 400px;
     height: 400px;
     background-color: rgb(173, 173, 173);
@@ -114,6 +115,7 @@ body {
     width: 34px;
     margin: 1px;
     border-style: groove;
+    border-radius:11%;
     border-top-color: rgb(238, 238, 238);
     border-right-color: rgb(153, 153, 153);
     border-bottom-color: rgb(153, 153, 153);
@@ -127,9 +129,6 @@ body {
     background-color: rgb(224, 224, 224);
 
 }
-
-.bomb {}
-
 .one {
     color: blue;
 }
@@ -149,7 +148,7 @@ body {
 /* Modal Header */
 .modal-header {
     padding: 2px 16px;
-    background-color: #313131;
+    background-color: #222222;
     line-height: 33px;
     text-align: center;
     color: rgb(255, 255, 255);
@@ -167,7 +166,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 2px 16px;
-    background-color: #313131;
+    background-color: #222222;
     color: white;
 }
 
@@ -183,7 +182,7 @@ body {
     user-select: none;
     /* Standard */
     display: inline-block;
-    background-color: #313131;
+    background-color: #222222;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -200,7 +199,6 @@ body {
     right: 0;
     justify-items: center;
     border: 1px solid;
-
     justify-content: space-around;
 }
 
@@ -247,23 +245,24 @@ body {
 #easy{
     font-size: larger;
     font-weight: bold;
-   
+    mix-blend-mode:hard-light;
 }
 
 #medium{
     font-size: larger;
     font-weight: bold;
-    
+    mix-blend-mode:hard-light;
 }
 #hard{
     font-size: larger;
     font-weight: bold;
+    mix-blend-mode:hard-light;
     
 }
 #guide{
     font-size: larger;
     font-weight: bold;
-    
+    mix-blend-mode:hard-light;
 }
 
 
