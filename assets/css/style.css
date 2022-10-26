@@ -270,6 +270,8 @@ body {
     color: #ffffff;
     font-size:x-large;
     font-weight: bolder;
+    display: block;
+    text-align:left;
 }
 .close:hover {
     color: #ff0000;

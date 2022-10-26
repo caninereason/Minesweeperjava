@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid')
+    let closer =  document.querySelector('.close')
     let scale = 0
     let flagsLeft = document.querySelector('#flags-left')
     let bombs = 10 
@@ -85,6 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
         reset()
     }
     function reset() {
+        closer.style.textAlign ="left";
+        span.innerHTML= "×";
         tut = false;
         tutorial();
         note.textContent = ""
@@ -108,7 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
-        if (won || isGameOver) return
+        if (won || isGameOver) {
+            span.innerHTML="please choose a level"; 
+            closer.style.textAlign ="center";
+            return}
+           
         modal.style.display = "none";
         mod = false;
         pause = false;
