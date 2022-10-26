@@ -13,12 +13,17 @@ body {
 
 }
 #title {
-    position: relative;
+    /* position:relative; */
+    width:99%;
     justify-content: center;
     text-align: center;
     margin: 0;
     padding: 0;
-
+    max-width: 100%;
+    
+}
+#title img{
+    max-width: 100%;
 }
 
 .container {
