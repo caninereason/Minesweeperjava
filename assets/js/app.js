@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var sign = document.getElementById('text')
     var face = document.getElementById('face')
     var guide = document.getElementById('guide')
-    sign.textContent = 'Minesweeper'
+    sign.textContent = 'MINESWEEPER'
+   
     // When the user clicks on the button, open the modal
     tutorial()
     btn.onclick = function () {
@@ -54,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function tutorial() {
         if (tut) {
-            note.textContent = "Clear all the mines! Reveal squares by clicking on them. If the square is empty, you will reveal how many neighbouring squares have mines, but if you click a mine, all the bombs will explode, right-click(or hold a square on mobile) to flag a potential mine, right-click again to remove a flag. When you have flagged all the bombs you win!"
+            note.innerHTML = "Clear all the mines! Reveal squares by clicking on them. If the square is empty, you will reveal how many neighbouring squares have mines, but if you click a mine, all the bombs will explode, right-click(or hold a square on mobile) to flag a potential mine, right-click again to remove a flag. When you have flagged all the bombs you win!"
         }
         else {
-            note.textContent = ""
+            note.innerHTML = ""
         }
     }
     guide.onclick = function () {

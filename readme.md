@@ -51,3 +51,4 @@ screeenshots
 bug: phone width screwy
 header footer 
 ^(\s)*$\n
+Use CSS media queries across the application to ensure the layout changes appropriately and maintains the page's structural integrity across device screen sizes. 
