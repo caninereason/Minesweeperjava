@@ -15,6 +15,12 @@
  - __Level Select__
    - The player also has three difficulty options, easy a 10 x 10 board with 10 bombs, medium a 12 x 12 board with 25 bombs, and hard a 15 x 15 board with 50 bombs. Once the player clicks a difficulty level, the modal closes, the timer starts and the game begins. The game may be paused again by clicking the face at the top of the game board. The player can left click on the board to reveal the squares, or right click on the board to place a flag on a square.
 ![alt text](assets/images/lvls.png)
+- __Flags__
+   - the number on the top left of the board represents how many flags the player has left, while also representing how many bombs are left to find. Should the player run out of flags and they have not found all the bombs, they must figure out where they have placed a false flag in order to win the game.
+
+- __Timer__
+   - The timer will count every second that has passed in the game, unless the game has been paused. Should the timer reach 999 the bombs will explode and the game ends.
+   
 - __Footer__
    - The footer section contains links to relevant social media networks, opening the default website in a new window.
 ![alt text](assets/images/foot.png)
@@ -53,5 +59,5 @@
  - more comments
  - bug: phone width screwy?
  - finish readme
- - improve lighthouse
+ - improve lighthouse?
  - Use CSS media queries across the application to ensure the layout changes appropriately and maintains the page's structural integrity across device screen sizes. 
