@@ -6,11 +6,10 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-}
-.close {
-    color: #ffffff;
-
+    -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #title {
     /* position:relative; */
@@ -264,7 +263,15 @@ body {
     mix-blend-mode:hard-light;
 }
 
-
+.close {
+    color: #ffffff;
+    font-size:x-large;
+    font-weight: bolder;
+}
+.close:hover {
+    color: #ff0000;
+    
+}
 #myBtn {
     display: flex;
     border-style: inset;
