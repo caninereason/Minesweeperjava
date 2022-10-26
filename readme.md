@@ -49,9 +49,9 @@
 
 
 # To do
-tidy up code?
-more comments
-bug: phone width screwy?
-finish readme
-improve lighthouse
-Use CSS media queries across the application to ensure the layout changes appropriately and maintains the page's structural integrity across device screen sizes. 
+ - tidy up code?
+ - more comments
+ - bug: phone width screwy?
+ - finish readme
+ - improve lighthouse
+ - Use CSS media queries across the application to ensure the layout changes appropriately and maintains the page's structural integrity across device screen sizes. 
