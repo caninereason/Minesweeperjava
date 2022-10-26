@@ -191,7 +191,7 @@ body {
     width: 400px;
     mix-blend-mode: hard-light;
     position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
     /* top: 300px;
@@ -211,7 +211,7 @@ body {
     }
 
     to {
-        top: 50%;
+        top: 55%;
         opacity: 1
     }
 }

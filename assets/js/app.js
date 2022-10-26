@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid');
     let closer = document.querySelector('.close');
     let scale = 0;
-    let flagsLeft = document.querySelector('#flags-left')
+    let flagsLeft = document.querySelector('#flags-left');
     let bombs = 10;
     let width = 10;
     let flags = 0;
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sq.classList.add(shuffledArray[i]);
             grid.appendChild(sq);
             sqs.push(sq);
-            sq.addEventListener('click', function (e) {
+            sq.addEventListener('click', function () {
                 click(sq);
             });
             // ctrl click
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // game end
-    function gameOver(sq) {
+    function gameOver() {
         tut = false;
 
         tutorial();
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sq.classList.contains('bomb')) {
                 sq.innerHTML = '💣';
             }
-        })
+        });
     }
     //array shuffle
     function shuffleArray(array) {
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //timer logic
     var timer = 0;
     let time = document.querySelector('.timer');
-    var interval = setInterval(function () {
+    setInterval(function () {
         if (!pause) {
             timer++;
             time.innerHTML = timer;
