@@ -1,6 +1,7 @@
 # Minesweeper
 
-The live link can be found here - https://caninereason.github.io/portfolio-2/
+- Live link - https://caninereason.github.io/portfolio-2/
+
 ![alt text](assets/images/mdwg.png)
 - For this javascript project I chose to recreate the classic windows game 'Minesweeper', using html, css and javascript. This is a quick puzzle game which many people have played, which requires the player to hunt for mines on a grid, while giving them limited information on where the bombs are located. Once the player clicks on the grid the squares are revealed, and they are shown how many potential bombs lie in the neighbouring squares. The player must use this information to deduce where the bombs are placed, and flag them accordingly. If all the bombs have been flagged then the player wins the game, however should the player click on a bomb, all the bombs explode and the game is over.
 
@@ -16,10 +17,10 @@ The live link can be found here - https://caninereason.github.io/portfolio-2/
 ![alt text](assets/images/lvls.png)
 - __Footer__
    - The footer section contains links to relevant social media networks, opening the default website in a new window.
-
+![alt text](assets/images/foot.png)
 ## Testing
    - The game has been tested on multiple browsers and devices, and appears to work flawlessly on desktop devices. The game plays quite well on  mobile phones , only requiring the user to long press on the board to place a flag.
-![alt text](assets/images/foot.png)
+
 ## Deployment
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
@@ -34,8 +35,11 @@ The live link can be found here - https://caninereason.github.io/portfolio-2/
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcaninereason.github.io%2Fportfolio-2)
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcaninereason.github.io%2Fportfolio-2%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
 - JS
-  -
+  - todo
+
+## Credits  
   
 
 
@@ -65,6 +69,5 @@ tidy up code
 readme
 screeenshots
 bug: phone width screwy
-header footer 
-^(\s)*$\n
+
 Use CSS media queries across the application to ensure the layout changes appropriately and maintains the page's structural integrity across device screen sizes. 
