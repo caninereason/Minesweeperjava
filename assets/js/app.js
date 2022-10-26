@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid')
-    // let scale =document.getElementById("form").elements["num"].valueAsNumber
     let scale = 0
     let flagsLeft = document.querySelector('#flags-left')
-    let result = document.querySelector('#result')
-    let bombs = 10 + (scale * 5)
-    let width = (10 + scale)
+    let bombs = 10 
+    let width = 10 
     let flags = 0
     let sqs = []
     let isGameOver = false
@@ -88,14 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function reset() {
         tut = false;
-
         tutorial();
-
         note.textContent = ""
         timer = -1;
         pause = false;
         face.innerHTML = "🙂"
-        sign.textContent = 'Minesweeper'
+        sign.textContent = 'MINESWEEPER'
         isGameOver = false
         mod = false
         won = false
@@ -133,9 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sq.classList.add(shuffledArray[i])
             grid.appendChild(sq)
             sqs.push(sq)
-            // console.log(sqs.length)
-
-            //normal click
             sq.addEventListener('click', function (e) {
                 click(sq)
             })
@@ -220,11 +213,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (total == 2) sq.classList.add('two')
                 if (total == 3) sq.classList.add('three')
                 if (total == 4) sq.classList.add('four')
+                if (total == 5) sq.classList.add('five')
                 sq.innerHTML = total
                 return
             }
             checksq(sq, currentId)
-
         }
         sq.classList.add('checked')
 
