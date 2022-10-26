@@ -39,35 +39,19 @@
 - JS
   - todo
 
+![alt text](assets/images/lhr.png)
 ## Credits  
   
+  - For the timer I modified this codepen by Srikar G. https://codepen.io/srikarg/pen/kKVJVa
+  - For the random bomb placement I used this shufflearray function from codegrepper https://www.codegrepper.com/code-examples/javascript/math+random+sort
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-https://www.codegrepper.com/code-examples/javascript/math+random+sort
-https://css-tricks.com/emoji-as-a-favicon/
-https://codepen.io/srikarg/pen/kKVJVa
-tidy up code
-readme
-screeenshots
-bug: phone width screwy
-
+# To do
+tidy up code?
+more comments
+bug: phone width screwy?
+finish readme
+improve lighthouse
 Use CSS media queries across the application to ensure the layout changes appropriately and maintains the page's structural integrity across device screen sizes. 
