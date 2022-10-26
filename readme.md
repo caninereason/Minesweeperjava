@@ -20,7 +20,7 @@
 
 - __Timer__
    - The timer will count every second that has passed in the game, unless the game has been paused. Should the timer reach 999 the bombs will explode and the game ends.
-   
+
 - __Footer__
    - The footer section contains links to relevant social media networks, opening the default website in a new window.
 ![alt text](assets/images/foot.png)
@@ -47,7 +47,8 @@
 
 ![alt text](assets/images/lhr.png)
 ## Credits  
-  
+  - Background and title images are personal creations
+  - emoji's, bombs and flags were taken straight from default installed windows 10 emoji pack
   - For the timer I modified this codepen by Srikar G. https://codepen.io/srikarg/pen/kKVJVa
   - For the random bomb placement I used this shufflearray function from codegrepper https://www.codegrepper.com/code-examples/javascript/math+random+sort
 

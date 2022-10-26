@@ -12,22 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.style.width = width * "40" + "px";
     grid.style.height = width * "40" + "px";
     flagsLeft.innerHTML = bombs - flags;
-    var modal = document.getElementById("myModal");
-    var note = document.getElementById("note");
-    var mod = true;
-    var won;
-    var pause = true;
-    var tut = true;
+    let modal = document.getElementById("myModal");
+    let note = document.getElementById("note");
+    let mod = true;
+    let won;
+    let pause = true;
+    let tut = true;
     // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-    var Easy = document.getElementById("easy");
-    var Medium = document.getElementById("medium");
-    var Hard = document.getElementById("hard");
+    let btn = document.getElementById("myBtn");
+    let Easy = document.getElementById("easy");
+    let Medium = document.getElementById("medium");
+    let Hard = document.getElementById("hard");
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    var sign = document.getElementById('text');
-    var face = document.getElementById('face');
-    var guide = document.getElementById('guide');
+    let span = document.getElementsByClassName("close")[0];
+    let sign = document.getElementById('text');
+    let face = document.getElementById('face');
+    let guide = document.getElementById('guide');
     sign.textContent = 'MINESWEEPER';
 
     // When the user clicks on the button, open the modal
@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (won || isGameOver) {
             tut = true;
             tutorial();
-
             return;
         }
 
@@ -64,25 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
     guide.onclick = function () {
         tut = !tut;
         tutorial();
-
     };
-
     Easy.onclick = function () {
         scale = 0;
         bombs = 10;
         reset();
     };
     Medium.onclick = function () {
-
         scale = 2;
-
         bombs = 15;
         reset();
     };
     Hard.onclick = function () {
-
         scale = 5;
-
         bombs = 25;
         reset();
     };
@@ -117,21 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
             closer.style.textAlign = "center";
             return;
         }
-
         modal.style.display = "none";
         mod = false;
         pause = false;
     };
     //create Board
     function createBoard() {
-
         //get shuffled game array
         const bombsArray = Array(bombs).fill('bomb');
         const emptyArray = Array(width * width - bombs).fill('valid');
         gameArray = emptyArray.concat(bombsArray);
         shuffleArray(gameArray);
         const shuffledArray = gameArray.sort(() => Math.random() - 0.5);
-
         for (let i = 0; i < width * width; i++) {
             const sq = document.createElement('div');
             sq.setAttribute('id', i);
@@ -166,10 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             }
         }
-
     }
     createBoard();
-
     function addFlag(sq) {
         if (isGameOver) return;
         if (mod == true) return;
@@ -182,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 sq.innerHTML = '🚩';
                 flags++;
                 flagsLeft.innerHTML = bombs - flags;
-
                 win();
             } else {
                 sq.classList.remove('flag');
@@ -229,23 +216,19 @@ document.addEventListener('DOMContentLoaded', () => {
             checksq(sq, currentId);
         }
         sq.classList.add('checked');
-
     }
     // check squares for empty
 
     function checksq(sq, currentId) {
         const Ledge = (currentId % width === 0);
         const Redge = (currentId % width === width - 1);
-
         setTimeout(() => {
-
             if (currentId > 0 && !Ledge) {
                 const newId = sqs[parseInt(currentId) - 1].id;
                 const newSq = document.getElementById(newId);
                 click(newSq);
             }
             if (currentId > 9 + scale && !Redge) {
-
                 const newId = sqs[parseInt(currentId) + 1 - width].id;
                 const newSq = document.getElementById(newId);
                 click(newSq);
@@ -261,7 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 click(newSq);
             }
             if (currentId < gameArray.length - 2 && !Redge) {
-
                 const newId = sqs[parseInt(currentId) + 1].id;
                 const newSq = document.getElementById(newId);
                 click(newSq);
@@ -283,15 +265,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 20);
     }
-
     // game end
     function gameOver() {
         tut = false;
-
         tutorial();
         face.innerHTML = "😵";
         pause = true;
-        sign.textContent = 'KABOOM ! Game Over';
+        sign.textContent = 'KABOOM ! GAME OVER';
         isGameOver = true;
         flags = 0;
         modal.style.display = "block";
@@ -310,9 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
             [array[i], array[j]] = [array[j], array[i]];
         }
     }
-
     //check win condition
-
     function win() {
         let match = 0;
         for (let i = 0; i < sqs.length; i++) {
@@ -321,7 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (match === bombs) {
                 tut = false;
-
                 tutorial();
                 face.innerHTML = "🤩";
                 pause = true;
@@ -331,11 +308,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('You Win!');
                 modal.style.display = "block";
                 flags = 0;
-
             }
         }
     }
-
     //timer logic
     var timer = 0;
     let time = document.querySelector('.timer');

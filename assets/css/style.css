@@ -192,8 +192,14 @@ body {
     font-size: larger;
     font-weight: bold;
     mix-blend-mode: hard-light;
-
+   
 }
+@media (max-width: 600px) {
+    #hard{  display:none;}
+    }
+    @media (max-width: 475px) {
+    #medium{  display:none;}
+        }
 #guide {
     font-size: larger;
     font-weight: bold;
