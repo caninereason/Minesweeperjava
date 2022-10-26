@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let bombs = 10;
     let width = 10;
     let flags = 0;
-    let sqs = []
+    let sqs = [];
     let isGameOver = false;
     let gameArray = width * width;
     grid.style.width = width * "40" + "px";
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sign.textContent = 'MINESWEEPER';
 
     // When the user clicks on the button, open the modal
-    tutorial()
+    tutorial();
     btn.onclick = function () {
         if (won || isGameOver) {
             tut = true;
@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
             mod = false;
             pause = false;
         }
-    }
+    };
     function tutorial() {
         if (tut) {
-            note.innerHTML = "Clear all the mines! Reveal squares by clicking on them. If the square is empty, you will reveal how many neighbouring squares have mines, but if you click a mine, all the bombs will explode, right-click(or hold a square on mobile) to flag a potential mine, right-click again to remove a flag. When you have flagged all the bombs you win!"
+            note.innerHTML = "Clear all the mines! Reveal squares by clicking on them. If the square is empty, you will reveal how many neighbouring squares have mines, but if you click a mine, all the bombs will explode, right-click(or hold a square on mobile) to flag a potential mine, right-click again to remove a flag. When you have flagged all the bombs you win!";
         }
         else {
             note.innerHTML = "";
@@ -65,27 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
         tut = !tut;
         tutorial();
 
-    }
+    };
 
     Easy.onclick = function () {
         scale = 0;
         bombs = 10;
         reset();
-    }
+    };
     Medium.onclick = function () {
 
         scale = 2;
 
         bombs = 15;
         reset();
-    }
+    };
     Hard.onclick = function () {
 
         scale = 5;
 
         bombs = 25;
         reset();
-    }
+    };
     function reset() {
         closer.style.textAlign = "left";
         span.innerHTML = "×";
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = "none";
         mod = false;
         pause = false;
-    }
+    };
     //create Board
     function createBoard() {
 
@@ -140,12 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
             sqs.push(sq);
             sq.addEventListener('click', function (e) {
                 click(sq);
-            })
+            });
             // ctrl click
             sq.oncontextmenu = function (e) {
                 e.preventDefault();
                 addFlag(sq);
-            }
+            };
         }
         // add numbers
         for (let i = 0; i < sqs.length; i++) {
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     }
-    createBoard()
+    createBoard();
 
     function addFlag(sq) {
         if (isGameOver) return;
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 flags++;
                 flagsLeft.innerHTML = bombs - flags;
 
-                win()
+                win();
             } else {
                 sq.classList.remove('flag');
                 sq.innerHTML = '';
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gameOver(sq);
         }
         else {
-            let total = sq.getAttribute('data')
+            let total = sq.getAttribute('data');
             if (total != 0) {
                 sq.classList.add('checked');
                 if (total == 1) sq.classList.add('one');
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 sq.innerHTML = total;
                 return;
             }
-            checksq(sq, currentId)
+            checksq(sq, currentId);
         }
         sq.classList.add('checked');
 
@@ -346,4 +346,4 @@ document.addEventListener('DOMContentLoaded', () => {
             if (timer === 999) gameOver();
         }
     }, 1000);
-})
+});
