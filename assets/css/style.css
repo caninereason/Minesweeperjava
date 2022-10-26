@@ -184,17 +184,20 @@ body {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 99%;
+    
    
     animation-name: animatetop;
     animation-duration: 0.4s;
     width: 400px;
     mix-blend-mode: hard-light;
-   
-    top: 300px;
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    /* top: 300px;
     position:absolute;
     left: 0;
-    right: 0;
+    right: 0; */
     justify-items: center;
     border: 1px solid;
     justify-content: space-around;
@@ -208,7 +211,7 @@ body {
     }
 
     to {
-        top: 300px;
+        top: 50%;
         opacity: 1
     }
 }
@@ -220,7 +223,7 @@ body {
     position: absolute;
 
     justify-content: space-evenly;
-    /* background-color: #888; */
+    
 
     bottom: 0;
     padding: 1%;
