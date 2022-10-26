@@ -10,7 +10,8 @@ The game is quite minimal in design, with only a single pop-up modal with which 
  These rules can be shown or hidden by clicking on the guide button, or while in game they can be accessed by clicking on the face at the top of the game board, which pauses the game timer and stops the user from interacting with the board. The modal can be closed with the x button in the top left corner, however if the player has received a game over or a win, this x will change to a message informing the player to pick a level. This was a design choice to limit the user from being stuck in a finished game and not knowing where to click to reactivate the modal.
  ![alt text](assets/images/lvl.png)
   The player also has three difficulty options, easy a 10 x 10 board with 10 bombs, medium a 12 x 12 board with 25 bombs, and hard a 15 x 15 board with 50 bombs. Once the player clicks a difficulty level, the modal closes, the timer starts and the game begins. The game may be paused again by clicking the face at the top of the game board. The player can left click on the board to reveal the squares, or right click on the board to place a flag on a square.
-![alt text](assets/images/ez.png) ![alt text](assets/images/med.png) ![alt text](assets/images/hard.png)
+![alt text](assets/images/lvls.png)
+
 ## Testing
 The game has been tested on multiple browsers and devices, and appears to work flawlessly on desktop devices. On one of the mobile phones I did find a bug which changed the layout of the grid, but it was easily fixed by increasing the dpi settings on the phone. The game plays quite well on  mobile phones , onl requiring the user to long press on the board to place a flag.
 
