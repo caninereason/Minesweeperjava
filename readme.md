@@ -38,6 +38,11 @@
   - Passed jshint tests with zero errors.
 
 ![alt text](assets/images/lhr.png)
+
+### Bugs
+  - after much testing on many browsers and devices, I found some bugs on smaller devices. When the screen width was to small , the larger grids would be obscured by the edge of the screen. I fixed this with a media query, checking the devices width, and removing the medium or hard option should the screen not support it
+  - There was also a bug on devices with a higher dpr setting, which would order the squares in the wrong way, resulting in the game being broken. I fixed this by checking the device pixel ratio in a media query and limiting the level options accordingly.
+
 ## Deployment
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
@@ -45,9 +50,8 @@
   - on the left is a menu, find pages and open it
   - under Branch it will say "GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository"
   - From the source section drop-down menu, select the main branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
-
-
+  - Once the main branch has been selected, press the save button to the right
+  - Now the message under branch should read "Your GitHub Pages site is currently being built from the main branch." 
 
 ## Credits  
   - Background and title images are personal creations
@@ -56,13 +60,3 @@
   - For the timer I modified this codepen by Srikar G. https://codepen.io/srikarg/pen/kKVJVa
   - For the random bomb placement I used this shufflearray function from codegrepper https://www.codegrepper.com/code-examples/javascript/math+random+sort
 
-
-
-
-# To do
- - tidy up code?
- - more comments
- - bug: phone width screwy?
- - finish readme
- - improve lighthouse?
- - Use CSS media queries across the application to ensure the layout changes appropriately and maintains the page's structural integrity across device screen sizes. 
