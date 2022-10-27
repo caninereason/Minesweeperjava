@@ -11,16 +11,19 @@
 
 - __Main menu__
   - The game is quite minimal in design, with only a single pop-up modal with which the player can interact and choose difficulty levels. On the initial load of the page this modal explains the rules for the game.
+
 ![alt text](assets/images/home.png)
 
 - __Interaction__
 
   - These rules can be shown or hidden by clicking on the guide button, or while in game they can be accessed by clicking on the face at the top of the game board, which pauses the game timer and stops the user from interacting with the board. The modal can be closed with the x button in the top left corner, however if the player has received a game over or a win, this x will change to a message informing the player to pick a level. This was a design choice to limit the user from being stuck in a finished game and not knowing where to click to reactivate the modal.
+
  ![alt text](assets/images/lvl.png)
 
  - __Level Select__
 
    - The player also has three difficulty options, easy a 10 x 10 board with 10 bombs, medium a 12 x 12 board with 25 bombs, and hard a 15 x 15 board with 50 bombs. Once the player clicks a difficulty level, the modal closes, the timer starts and the game begins. The game may be paused again by clicking the face at the top of the game board. The player can left click on the board to reveal the squares, or right click on the board to place a flag on a square.
+   
 ![alt text](assets/images/lvls.png)
 
 - __Flags__
