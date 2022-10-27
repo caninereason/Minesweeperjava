@@ -203,7 +203,7 @@ body {
 @media (max-resolution: 440dpi){
     #hard{  display:none;}
     }
-    @media  (max-resolution: 320dpi) {
+@media  (max-resolution: 320dpi) {
         #medium{  display:none;}
 }
 #guide {
