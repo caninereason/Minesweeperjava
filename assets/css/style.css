@@ -200,10 +200,10 @@ body {
 @media (max-width: 475px) {
     #medium{  display:none;}
         }
-@media (max-resolution: 440dpi){
+@media (min-resolution: 440dpi){
     #hard{  display:none;}
     }
-@media  (max-resolution: 320dpi) {
+@media  (min-resolution: 320dpi) {
         #medium{  display:none;}
 }
 #guide {
