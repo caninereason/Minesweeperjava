@@ -194,10 +194,10 @@ body {
     mix-blend-mode: hard-light;
    
 }
-@media (max-width: 600px) and (-webkit-max-device-pixel-ratio: 1.8){
+@media (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1.8){
     #hard{  display:none;}
     }
-@media (max-width: 475px) and (-webkit-max-device-pixel-ratio: 2){
+@media (max-width: 475px) and (-webkit-min-device-pixel-ratio: 2){
     #medium{  display:none;}
         }
 
