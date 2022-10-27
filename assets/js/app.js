@@ -305,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 sign.textContent = 'YOU WIN!';
                 won = true;
                 mod = true;
-                console.log('You Win!');
                 modal.style.display = "block";
                 flags = 0;
             }

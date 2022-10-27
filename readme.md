@@ -43,12 +43,13 @@
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcaninereason.github.io%2Fportfolio-2%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 - JS
-  - todo
+  - Passed jshint tests with zero errors.
 
 ![alt text](assets/images/lhr.png)
 ## Credits  
   - Background and title images are personal creations
   - emoji's, bombs and flags were taken straight from default installed windows 10 emoji pack
+  - For the modal I modified an example from w3schools.com https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
   - For the timer I modified this codepen by Srikar G. https://codepen.io/srikarg/pen/kKVJVa
   - For the random bomb placement I used this shufflearray function from codegrepper https://www.codegrepper.com/code-examples/javascript/math+random+sort
 
