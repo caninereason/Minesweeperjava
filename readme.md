@@ -42,7 +42,9 @@
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
   - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
+  - on the left is a menu, find pages and open it
+  - under Branch it will say "GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository"
+  - From the source section drop-down menu, select the main branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
 

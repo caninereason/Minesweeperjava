@@ -1,3 +1,4 @@
+/* the body has text select turned off to make improve user experience */
 body {
     overflow: hidden;
     display: block;
@@ -64,6 +65,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+/* game board styling */
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -117,14 +119,6 @@ body {
 .modal-body {
     padding: 2px 16px;
 }
-/* Modal Footer */
-.modal-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 2px 16px;
-    background-color: #222222;
-    color: white;
-}
 /* Modal Content */
 .modal-content {
     z-index: 3;
@@ -173,6 +167,7 @@ body {
     font-size: 160%;
     color: #ffffff;
 }
+/* level select */
 #level {
     display: flex;
     justify-content: space-evenly;
@@ -194,10 +189,11 @@ body {
     mix-blend-mode: hard-light;
    
 }
-@media (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1.8){
+/* media queries for phones */
+@media (max-width: 600px) ,(-webkit-min-device-pixel-ratio: 1.5){
     #hard{  display:none;}
     }
-@media (max-width: 475px) and (-webkit-min-device-pixel-ratio: 2){
+@media (max-width: 475px) ,(-webkit-min-device-pixel-ratio: 2){
     #medium{  display:none;}
         }
 
@@ -206,6 +202,7 @@ body {
     font-weight: bold;
     mix-blend-mode: hard-light;
 }
+/* close button logic */
 .close {
     color: #ffffff;
     font-size: x-large;
