@@ -194,12 +194,18 @@ body {
     mix-blend-mode: hard-light;
    
 }
-@media (max-width: 600px) and (max-resolution: 440dpi){
+@media (max-width: 600px) {
     #hard{  display:none;}
     }
-    @media (max-width: 475px) and (max-resolution: 320dpi) {
+@media (max-width: 475px) {
     #medium{  display:none;}
         }
+@media (max-resolution: 440dpi){
+    #hard{  display:none;}
+    }
+    @media  (max-resolution: 320dpi) {
+        #medium{  display:none;}
+}
 #guide {
     font-size: larger;
     font-weight: bold;
