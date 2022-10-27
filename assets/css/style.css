@@ -236,15 +236,15 @@ body {
     }
 }
 
-@media screen and (max-width: 600px) and
+@media screen and (max-width: 400px) and
 (-webkit-min-device-pixel-ratio: 1.8) {
     #hard {
         display: none;
     }
 }
 
-@media screen and (max-width: 320px) and
-(-webkit-min-device-pixel-ratio: 2.2) {
+@media screen and (max-width: 320px),
+(-webkit-min-device-pixel-ratio: 2) {
     #medium {
         display: none;
     }
