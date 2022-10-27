@@ -222,14 +222,27 @@ body {
 }
 
 /* media queries for phones */
-@media (max-width: 600px),
-(-webkit-min-device-pixel-ratio: 1.5) {
+@media (max-width: 600px)
+ {
     #hard {
         display: none;
     }
 }
 
-@media (max-width: 475px),
+@media (max-width: 475px)
+ {
+    #medium {
+        display: none;
+    }
+}
+@media (max-width: 600px)and
+(-webkit-min-device-pixel-ratio: 1.7) {
+    #hard {
+        display: none;
+    }
+}
+
+@media (max-width: 475px)and
 (-webkit-min-device-pixel-ratio: 2) {
     #medium {
         display: none;
@@ -242,7 +255,7 @@ body {
     mix-blend-mode: hard-light;
 }
 
-/* close button styling */
+/* close button stylingadd */
 .close {
     color: #ffffff;
     font-size: x-large;
