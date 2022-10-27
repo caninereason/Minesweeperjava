@@ -27,15 +27,7 @@
 ## Testing
    - The game has been tested on multiple browsers and devices, and appears to work flawlessly on desktop devices. The game plays quite well on  mobile phones , only requiring the user to long press on the board to place a flag.
 
-## Deployment
-
-- The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
-
-
-## Validation
+### Validation
 
 - HTML
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcaninereason.github.io%2Fportfolio-2)
@@ -46,6 +38,15 @@
   - Passed jshint tests with zero errors.
 
 ![alt text](assets/images/lhr.png)
+## Deployment
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab 
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+
+
+
 ## Credits  
   - Background and title images are personal creations
   - emoji's, bombs and flags were taken straight from default installed windows 10 emoji pack

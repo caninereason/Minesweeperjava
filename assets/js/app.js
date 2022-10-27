@@ -12,25 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.style.width = width * "40" + "px";
     grid.style.height = width * "40" + "px";
     flagsLeft.innerHTML = bombs - flags;
-    let modal = document.getElementById("myModal");
-    let note = document.getElementById("note");
+    
     let mod = true;
     let won;
     let pause = true;
     let tut = true;
     // Get the button that opens the modal
+    let span = document.getElementsByClassName("close")[0];
     let btn = document.getElementById("myBtn");
     let Easy = document.getElementById("easy");
     let Medium = document.getElementById("medium");
     let Hard = document.getElementById("hard");
+    let modal = document.getElementById("myModal");
+    let note = document.getElementById("note");
     // Get the <span> element that closes the modal
-    let span = document.getElementsByClassName("close")[0];
+    
     let sign = document.getElementById('text');
     let face = document.getElementById('face');
     let guide = document.getElementById('guide');
     sign.textContent = 'MINESWEEPER';
-
-    // When the user clicks on the button, open the modal
     tutorial();
     btn.onclick = function () {
         if (won || isGameOver) {

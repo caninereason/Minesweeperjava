@@ -197,7 +197,7 @@ body {
 @media (max-width: 600px) {
     #hard{  display:none;}
     }
-    @media (max-width: 475px) {
+    @media (max-width: 475px)and (min-resolution: 320dpi) {
     #medium{  display:none;}
         }
 #guide {
