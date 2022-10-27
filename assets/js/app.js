@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+    //initial values
+    document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid');
     let closer = document.querySelector('.close');
     let scale = 0;
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let won;
     let pause = true;
     let tut = true;
-    // Get the button that opens the modal
+    // Get the css elements
     let span = document.getElementsByClassName("close")[0];
     let btn = document.getElementById("myBtn");
     let Easy = document.getElementById("easy");
@@ -25,20 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let Hard = document.getElementById("hard");
     let modal = document.getElementById("myModal");
     let note = document.getElementById("note");
-    // Get the <span> element that closes the modal
-    
     let sign = document.getElementById('text');
     let face = document.getElementById('face');
     let guide = document.getElementById('guide');
     sign.textContent = 'MINESWEEPER';
+    //open the guide
     tutorial();
+    //face button logic
     btn.onclick = function () {
         if (won || isGameOver) {
             tut = true;
             tutorial();
             return;
         }
-
         if (!pause) {
             tut = true;
             tutorial();
@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pause = false;
         }
     };
+    //show/hide guide text
     function tutorial() {
         if (tut) {
             note.innerHTML = "Clear all the mines! Reveal squares by clicking on them. If the square is empty, you will reveal how many neighbouring squares have mines, but if you click a mine, all the bombs will explode, right-click(or hold a square on mobile) to flag a potential mine, right-click again to remove a flag. When you have flagged all the bombs you win!";
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tut = !tut;
         tutorial();
     };
+    //level select values
     Easy.onclick = function () {
         scale = 0;
         bombs = 10;
@@ -79,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bombs = 25;
         reset();
     };
+    //reset the gameboard
     function reset() {
         closer.style.textAlign = "left";
         span.innerHTML = "×";
@@ -103,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         createBoard();
         modal.style.display = "none";
     }
-    // When the user clicks on <span> (x), close the modal
+    // close button logic
     span.onclick = function () {
         if (won || isGameOver) {
             span.innerHTML = "please choose a level";
@@ -116,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     //create Board
     function createBoard() {
-        //get shuffled game array
         const bombsArray = Array(bombs).fill('bomb');
         const emptyArray = Array(width * width - bombs).fill('valid');
         gameArray = emptyArray.concat(bombsArray);
@@ -131,13 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
             sq.addEventListener('click', function () {
                 click(sq);
             });
-            // ctrl click
             sq.oncontextmenu = function (e) {
                 e.preventDefault();
                 addFlag(sq);
             };
         }
-        // add numbers
+        // set number indicators on grid
         for (let i = 0; i < sqs.length; i++) {
             let total = 0;
             const lEdge = (i % width === 0);
@@ -153,11 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (i <= gameArray.length - width - 2 && !rEdge && sqs[i + 1 + width].classList.contains('bomb')) total++;
                 if (i <= gameArray.length - width - 1 && sqs[i + width].classList.contains('bomb')) total++;
                 sqs[i].setAttribute('data', total);
-
             }
         }
     }
     createBoard();
+    //add flags on right click
     function addFlag(sq) {
         if (isGameOver) return;
         if (mod == true) return;
@@ -186,9 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 flagsLeft.innerHTML = bombs - flags;
             }
         }
-
     }
-
     //click actions
     function click(sq) {
         if (won) return;
@@ -197,7 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isGameOver) return;
         if (sq.classList.contains('checked')) return;
         if (sq.classList.contains('flag')) return;
-
         if (sq.classList.contains('bomb')) {
             gameOver(sq);
         }
@@ -218,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sq.classList.add('checked');
     }
     // check squares for empty
-
     function checksq(sq, currentId) {
         const Ledge = (currentId % width === 0);
         const Redge = (currentId % width === width - 1);
@@ -276,7 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
         flags = 0;
         modal.style.display = "block";
         mod = true;
-        //show bombs
         sqs.forEach(sq => {
             if (sq.classList.contains('bomb')) {
                 sq.innerHTML = '💣';
