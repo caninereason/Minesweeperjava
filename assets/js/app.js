@@ -55,7 +55,7 @@
     //show/hide guide text
     function tutorial() {
         if (tut) {
-            note.innerHTML = "Clear all the mines! Reveal squares by clicking on them. If the square is empty, you will reveal how many neighbouring squares have mines, but if you click a mine, all the bombs will explode, right-click(or hold a square on mobile) to flag a potential mine, right-click again to remove a flag. When you have flagged all the bombs you win!";
+            note.innerHTML = "Clear all the mines! Reveal squares by clicking on them. If the square is empty, you will reveal how many neighbouring squares have mines, but if you click a mine, all the bombs will explode! You must find all the bombs by placing flags(represented on the top-left) using right-click(or hold a square on mobile), right-click again to remove a flag. When you have flagged all the bombs you win!";
         }
         else {
             note.innerHTML = "";

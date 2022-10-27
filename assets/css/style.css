@@ -115,6 +115,10 @@ body {
     color: rgb(255, 255, 255);
     font-size: larger;
 }
+#note{
+    font-size:x-large;
+    font-weight: bolder;
+}
 /* Modal Body */
 .modal-body {
     padding: 2px 16px;
