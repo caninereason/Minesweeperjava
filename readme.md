@@ -55,7 +55,7 @@
 ### Bugs
 
   - after much testing on many browsers and devices, I found some bugs on smaller devices. When the screen width was to small , the larger grids would be obscured by the edge of the screen. I fixed this with a media query, checking the devices width, and removing the medium or hard option should the screen not support it
-  - There was also a bug on devices with a higher dpr setting, which would order the squares in the wrong way, resulting in the game being broken. I fixed this by checking the device pixel ratio in a media query and limiting the level options accordingly.
+  - There was also a bug on devices with a higher dpr setting, which would order the squares in the wrong way, resulting in the game being broken. I fixed this by checking the device pixel ratio in a media query and limiting the level options accordingly. I had to make many commits here to debug on smaller devices.
 
 ## Deployment
 
