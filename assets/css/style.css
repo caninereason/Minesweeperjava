@@ -236,15 +236,15 @@ body {
     }
 }
 
-@media (max-width: 400px)and
-(-webkit-min-device-pixel-ratio: 1.7) {
+@media (max-width: 600px)and
+(-webkit-min-device-pixel-ratio: 1.8) {
     #hard {
         display: none;
     }
 }
 
-@media (max-width: 325px)and
-(-webkit-min-device-pixel-ratio: 2) {
+@media (max-width: 320px)and
+(-webkit-min-device-pixel-ratio: 2.2) {
     #medium {
         display: none;
     }
