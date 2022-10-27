@@ -3,6 +3,7 @@
 - Live link - https://caninereason.github.io/portfolio-2/
 
 ![alt text](assets/images/mdwg.png)
+# Overview
 - For this javascript project I chose to recreate the classic windows game 'Minesweeper', using html, css and javascript. This is a quick puzzle game which many people have played, which requires the player to hunt for mines on a grid, while giving them limited information on where the bombs are located. Once the player clicks on the grid the squares are revealed, and they are shown how many potential bombs lie in the neighbouring squares. The player must use this information to deduce where the bombs are placed, and flag them accordingly. If all the bombs have been flagged then the player wins the game, however should the player click on a bomb, all the bombs explode and the game is over.
 
 ## Features

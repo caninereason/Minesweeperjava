@@ -1,5 +1,5 @@
-    //initial values
-    document.addEventListener('DOMContentLoaded', () => {
+//initial values
+document.addEventListener('DOMContentLoaded', () => {
     let grid = document.querySelector('.grid');
     let closer = document.querySelector('.close');
     let scale = 0;
@@ -13,7 +13,6 @@
     grid.style.width = width * "40" + "px";
     grid.style.height = width * "40" + "px";
     flagsLeft.innerHTML = bombs - flags;
-    
     let mod = true;
     let won;
     let pause = true;
@@ -215,7 +214,7 @@
         }
         sq.classList.add('checked');
     }
-    // check squares for empty
+    // check squares and set to correct figure
     function checksq(sq, currentId) {
         const Ledge = (currentId % width === 0);
         const Redge = (currentId % width === width - 1);

@@ -12,6 +12,7 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+
 #title {
     width: 99%;
     justify-content: center;
@@ -20,9 +21,11 @@ body {
     padding: 0;
     max-width: 100%;
 }
+
 #title img {
     max-width: 100%;
 }
+
 .container {
     position: relative;
     border: 10px;
@@ -30,7 +33,8 @@ body {
     bottom: 140px;
     border-width: 5px;
     border-color: rgb(63, 63, 63);
- }
+}
+
 #menu {
     display: flex;
     width: 100%;
@@ -39,6 +43,7 @@ body {
     justify-content: space-between;
     padding-bottom: 10px;
 }
+
 .timer {
     display: flex;
     border-style: inset;
@@ -49,6 +54,7 @@ body {
     background-color: #000000;
     border-color: rgb(165, 165, 165);
 }
+
 #flags-left {
     display: flex;
     border-style: inset;
@@ -59,12 +65,14 @@ body {
     background-color: #000000;
     border-color: rgb(165, 165, 165);
 }
+
 .main {
     display: grid;
     grid-template-rows: 100vh;
     align-items: center;
     justify-content: center;
 }
+
 /* game board styling */
 .grid {
     display: flex;
@@ -78,6 +86,7 @@ body {
     font-weight: bold;
     font-size: larger;
 }
+
 .grid div {
     height: 34px;
     width: 34px;
@@ -91,21 +100,27 @@ body {
     padding: 0;
     margin: 0;
 }
+
 .checked {
     background-color: rgb(224, 224, 224);
 }
+
 .one {
     color: blue;
 }
+
 .two {
     color: green;
 }
+
 .three {
     color: red;
 }
+
 .four {
     color: purple;
 }
+
 /* Modal Header */
 .modal-header {
     padding: 2px 16px;
@@ -115,14 +130,17 @@ body {
     color: rgb(255, 255, 255);
     font-size: larger;
 }
-#note{
-    font-size:x-large;
+
+#note {
+    font-size: x-large;
     font-weight: bolder;
 }
+
 /* Modal Body */
 .modal-body {
     padding: 2px 16px;
 }
+
 /* Modal Content */
 .modal-content {
     z-index: 3;
@@ -143,17 +161,20 @@ body {
     border: 1px solid;
     justify-content: space-around;
 }
+
 /* Add Animation */
 @keyframes animatetop {
     from {
         top: -200px;
         opacity: 0
     }
+
     to {
         top: 55%;
         opacity: 1
     }
 }
+
 /* Social-networks */
 .social-networks {
     width: 100%;
@@ -163,50 +184,65 @@ body {
     bottom: 0;
     padding: 1%;
 }
+
 .social-networks>li {
 
     display: inline;
 }
+
 .social-networks i {
     font-size: 160%;
     color: #ffffff;
 }
+
 /* level select */
 #level {
     display: flex;
     justify-content: space-evenly;
 
 }
+
 #easy {
     font-size: larger;
     font-weight: bold;
     mix-blend-mode: hard-light;
 }
+
 #medium {
     font-size: larger;
     font-weight: bold;
     mix-blend-mode: hard-light;
 }
+
 #hard {
     font-size: larger;
     font-weight: bold;
     mix-blend-mode: hard-light;
-   
+
 }
+
 /* media queries for phones */
-@media (max-width: 600px) ,(-webkit-min-device-pixel-ratio: 1.5){
-    #hard{  display:none;}
+@media (max-width: 600px),
+(-webkit-min-device-pixel-ratio: 1.5) {
+    #hard {
+        display: none;
     }
-@media (max-width: 475px) ,(-webkit-min-device-pixel-ratio: 2){
-    #medium{  display:none;}
-        }
+}
+
+@media (max-width: 475px),
+(-webkit-min-device-pixel-ratio: 2) {
+    #medium {
+        display: none;
+    }
+}
 
 #guide {
     font-size: larger;
     font-weight: bold;
     mix-blend-mode: hard-light;
 }
-/* close button logic */
+
+/* close button styling */
 .close {
     color: #ffffff;
     font-size: x-large;
@@ -214,9 +250,11 @@ body {
     display: block;
     text-align: left;
 }
+
 .close:hover {
     color: #ff0000;
 }
+
 #myBtn {
     display: flex;
     border-style: inset;
@@ -226,9 +264,11 @@ body {
     background-color: #000000;
     border-color: rgb(165, 165, 165);
 }
+
 #myBtn:hover span {
     display: none;
 }
+
 #myBtn:hover:before {
     content: "?";
     color: red;
