@@ -194,10 +194,10 @@ body {
     mix-blend-mode: hard-light;
    
 }
-@media (max-width: 600px) {
+@media (max-width: 600px) and (min-resolution: 440dpi){
     #hard{  display:none;}
     }
-    @media (max-width: 475px)and (min-resolution: 320dpi) {
+    @media (max-width: 475px) and (min-resolution: 320dpi) {
     #medium{  display:none;}
         }
 #guide {
