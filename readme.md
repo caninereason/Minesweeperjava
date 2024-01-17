@@ -1,6 +1,6 @@
 # Minesweeper
 
-- Live link - https://caninereason.github.io/portfolio-2/
+- Live link - https://caninereason.github.io/Minesweeperjava/
 
 ![alt text](assets/images/mdwg.png)
 
